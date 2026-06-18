@@ -120,8 +120,8 @@ section{padding:84px 0}
 .cs-facts{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
 .cs-facts .label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);margin-bottom:.3rem}
 .cs-facts .val{font-weight:600;color:var(--ink);font-size:.92rem}
-.cs-cover{position:relative;width:100%;aspect-ratio:4/3;border-radius:calc(var(--radius) + 6px);overflow:hidden;background:linear-gradient(135deg,#1A130D,#0E1014 70%);box-shadow:var(--shadow)}
-.cs-cover img,.cs-cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cs-cover{position:relative;width:100%;aspect-ratio:189/100;border-radius:calc(var(--radius) + 6px);overflow:hidden;background:linear-gradient(135deg,#1A130D,#0E1014 70%);box-shadow:var(--shadow)}
+.cs-cover img,.cs-cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .cs-cover .media-fallback{position:absolute;inset:0}
 @media(max-width:880px){.cs-hero-grid{grid-template-columns:1fr;gap:2.2rem}.cs-cover{order:-1}}
 
@@ -367,7 +367,7 @@ footer a:hover{color:#fff}
       </div>
       <div class="cs-cover reveal in-view">
         <!-- Swap <img> for <video data-field="cover" autoplay muted loop playsinline> to use video -->
-        <img data-field="cover" src="assets/weddingclickz-hero.png" alt="WeddingClickz online booking — Book Your Perfect Wedding Coverage landing screen" onerror="this.style.display='none'">
+        <img data-field="cover" src="assets/weddingclickz-step-2-services.png" alt="WeddingClickz — choosing photography and videography services with a live price summary" onerror="this.style.display='none'">
         <div class="media-fallback">Hero image / video</div>
       </div>
     </div>
