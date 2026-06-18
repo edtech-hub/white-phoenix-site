@@ -74,6 +74,9 @@ p{color:var(--ink-soft)}
 .btn-night:hover{border-color:#fff;transform:translateY(-2px)}
 .btn-ghost{background:transparent;color:var(--ink);border-color:#CFCBC3}
 .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-flame-outline{background:transparent;color:var(--flame-deep);border-color:var(--flame)}
+.btn-flame-outline:hover{background:rgba(255,92,26,.08);transform:translateY(-2px)}
+.btn-flame-outline svg{width:18px;height:18px;stroke:currentColor;fill:none}
 a:focus-visible,.btn:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:6px}
 
 /* ===== Nav ===== */
@@ -314,6 +317,35 @@ footer a:hover{color:#fff}
   html{scroll-behavior:auto}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "WeddingClickz: turning a two-day quote into a two-minute one",
+  "description": "How White Phoenix built WeddingClickz a self-serve quoting tool that turns a one-to-two-day, hand-designed quote into an automatic one couples get by email in about two minutes — 1,000+ quotes in its first six months.",
+  "image": "https://whitephoenixconsulting.com/assets/weddingclickz-step-2-services.png",
+  "datePublished": "2026-06-18",
+  "author": { "@type": "Organization", "name": "White Phoenix", "url": "https://whitephoenixconsulting.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "White Phoenix",
+    "logo": { "@type": "ImageObject", "url": "https://whitephoenixconsulting.com/og-image.png" }
+  },
+  "mainEntityOfPage": "https://whitephoenixconsulting.com/case-study.html",
+  "about": { "@type": "Organization", "name": "WeddingClickz Photography", "url": "https://weddingclickzquotation.com/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://whitephoenixconsulting.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Our Work", "item": "https://whitephoenixconsulting.com/portfolio.html" },
+    { "@type": "ListItem", "position": 3, "name": "WeddingClickz", "item": "https://whitephoenixconsulting.com/case-study.html?id=wedding-clickz" }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -369,7 +401,7 @@ footer a:hover{color:#fff}
         <h1 data-field="title">WeddingClickz: turning a two-day quote into a two-minute one</h1>
         <p class="deck" data-field="deck">WeddingClickz was winning couples on its photography — and then losing momentum the moment someone asked what it would cost. We built a self-serve quoting tool that answers in about two minutes, automatically, by email. In its first six months it generated more than a thousand quotes.</p>
         <div class="cs-hero-cta">
-          <a href="https://weddingclickzquotation.com/" target="_blank" rel="noopener" class="btn btn-flame">View the live tool
+          <a href="https://weddingclickzquotation.com/" target="_blank" rel="noopener" class="btn btn-flame-outline">View Client Site
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
           </a>
         </div>
