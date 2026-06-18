@@ -137,6 +137,22 @@ header.scrolled{background:rgba(251,250,248,.94);box-shadow:0 8px 30px -16px rgb
 @media(max-width:900px){.card-grid,.card-grid.two{grid-template-columns:1fr}}
 .close-line{text-align:center;max-width:720px;margin:3rem auto 0;font-family:var(--display);font-weight:500;font-size:clamp(1.2rem,2.4vw,1.7rem);color:var(--ink);letter-spacing:-.01em}
 .close-line em{font-style:normal;color:var(--flame-deep)}
+/* Custom advantage band */
+.edge{background:var(--night);color:#fff;position:relative;overflow:hidden}
+.edge::before{content:"";position:absolute;top:-160px;right:-120px;width:520px;height:520px;background:radial-gradient(closest-side,rgba(255,110,30,.16),transparent 70%);pointer-events:none}
+.edge .inner{position:relative;max-width:920px;margin:0 auto;text-align:center}
+.edge .eyebrow{color:var(--ember);justify-content:center}
+.edge .eyebrow::before{display:none}
+.edge h2{color:#fff;margin:1.1rem auto 1.2rem;max-width:840px}
+.edge h2 .flame-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.edge .ans{font-size:1.1rem;color:rgba(255,255,255,.74);max-width:660px;margin:0 auto 2.8rem}
+.edge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;text-align:left}
+.edge-item{background:var(--night-soft);border:1px solid var(--night-line);border-radius:var(--radius);padding:1.7rem 1.6rem}
+.edge-item .ico{width:42px;height:42px;border-radius:11px;background:rgba(255,92,26,.12);border:1px solid rgba(255,92,26,.22);display:flex;align-items:center;justify-content:center}
+.edge-item .ico .micon{font-family:'Material Symbols Outlined';font-size:22px;color:var(--ember)}
+.edge-item h3{color:#fff;font-size:1.08rem;margin:.9rem 0 .45rem}
+.edge-item p{color:rgba(255,255,255,.62);font-size:.93rem}
+@media(max-width:860px){.edge-grid{grid-template-columns:1fr}}
 /* Solution band */
 .solution{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .solution .inner{max-width:820px;margin:0 auto;text-align:center}
@@ -361,6 +377,25 @@ finally{bt.disabled=false;bt.textContent=o;}});}
 # to the main site). The product brand (cfg["brand"]) stays in the page copy.
 VENDOR_NAME = "White Phoenix"
 VENDOR_URL = "https://whitephoenixconsulting.com/"
+VENDOR_TAGLINE = ("We build software tools customized for your business, shaped around "
+                  "your needs, your SOPs and the way you actually work.")
+
+# Shared "custom advantage" band — the core positioning, identical on every
+# niche page: off-the-shelf software gives no edge; custom-built does.
+EDGE_HTML = """
+<!-- CUSTOM ADVANTAGE -->
+<section class="edge">
+  <div class="wrap"><div class="inner">
+    <span class="eyebrow">The custom advantage</span>
+    <h2>If your competitor has access to the same software, <span class="flame-text">how does your business get an edge?</span></h2>
+    <p class="ans">We don't resell off-the-shelf software. We build tools customized for your business, shaped around your needs, your SOPs and the way you actually work.</p>
+    <div class="edge-grid">
+      <div class="edge-item reveal"><div class="ico"><span class="micon">forum</span></div><h3>We learn your business</h3><p>We start by understanding how you actually operate: your goals, your team, and what sets you apart from everyone competing for the same work.</p></div>
+      <div class="edge-item reveal"><div class="ico"><span class="micon">account_tree</span></div><h3>We map your SOPs</h3><p>Your process, pricing rules, approvals and terms are built into the tool, so it runs the way your business already does.</p></div>
+      <div class="edge-item reveal"><div class="ico"><span class="micon">tune</span></div><h3>We build around your items</h3><p>Your catalog, packages and line items, modeled to fit you, not a generic template you have to bend your business around.</p></div>
+    </div>
+  </div></div>
+</section>"""
 
 LOGO_SVG = (
     '<svg viewBox="0 0 32 32" fill="none" aria-hidden="true">'
@@ -512,6 +547,7 @@ def render(cfg, demo_html):
     <p>{esc(cfg["solution"]["body2"])}</p>
   </div></div>
 </section>
+{EDGE_HTML}
 
 <!-- HOW IT WORKS -->
 <section id="how">
@@ -619,7 +655,7 @@ def render(cfg, demo_html):
     <div class="foot-top">
       <div class="foot-brand">
         <a href="{VENDOR_URL}" class="logo">{LOGO_SVG}{VENDOR_NAME}</a>
-        <p>{esc(cfg["footer_tagline"])}</p>
+        <p>{VENDOR_TAGLINE}</p>
       </div>
       <a href="#book" class="btn btn-night">{esc(cfg["nav"]["cta"])}</a>
     </div>
