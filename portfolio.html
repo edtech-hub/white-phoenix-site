@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work & Case Studies — White Phoenix</title>
+<meta name="description" content="Selected work from White Phoenix — websites, apps, and custom software, broken down as case studies with the strategy, decisions, and results behind each build.">
+<link rel="canonical" href="https://whitephoenixconsulting.com/portfolio.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="White Phoenix">
+<meta name="theme-color" content="#0E1014">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="White Phoenix">
+<meta property="og:url" content="https://whitephoenixconsulting.com/portfolio.html">
+<meta property="og:title" content="Work & Case Studies — White Phoenix">
+<meta property="og:description" content="Selected work from White Phoenix — websites, apps, and custom software, broken down as case studies with the strategy, decisions, and results behind each build.">
+<meta property="og:image" content="https://whitephoenixconsulting.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="White Phoenix — Web Development & Technology Consulting">
+<meta property="og:locale" content="en_US">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Work & Case Studies — White Phoenix">
+<meta name="twitter:description" content="Selected work from White Phoenix — websites, apps, and custom software, broken down as case studies with the strategy, decisions, and results behind each build.">
+<meta name="twitter:image" content="https://whitephoenixconsulting.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&display=swap" rel="stylesheet">
+<style>
+:root{
+  --porcelain:#FBFAF8;
+  --paper:#FFFFFF;
+  --ink:#16181D;
+  --ink-soft:#3A3E47;
+  --ash:#7C818B;
+  --line:#E8E6E1;
+  --flame:#FF5C1A;
+  --flame-deep:#E8430A;
+  --ember:#FFB42E;
+  --night:#0E1014;
+  --night-soft:#171A20;
+  --night-line:rgba(255,255,255,.09);
+  --grad:linear-gradient(92deg,#FF5C1A 0%,#FFB42E 100%);
+  --display:'Clash Display',sans-serif;
+  --body:'Inter',sans-serif;
+  --radius:18px;
+  --shadow:0 18px 50px -22px rgba(22,24,29,.22);
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--porcelain);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3,.display{font-family:var(--display);font-weight:600;line-height:1.08;letter-spacing:-.015em}
+h1{font-size:clamp(2.6rem,6vw,4.6rem)}
+h2{font-size:clamp(2rem,4vw,3.1rem)}
+h3{font-size:1.32rem;line-height:1.25}
+p{color:var(--ink-soft)}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--flame-deep)}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--grad);border-radius:2px}
+section{padding:104px 0}
+@media(max-width:760px){section{padding:72px 0}}
+
+/* ===== Signature: ember line ===== */
+.ember-line{position:relative;display:inline-block}
+.ember-line::after{content:"";position:absolute;left:0;bottom:-.14em;width:100%;height:.09em;background:var(--grad);border-radius:99px;transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.2,1) .25s}
+.in-view .ember-line::after{transform:scaleX(1)}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:var(--body);font-weight:600;font-size:.98rem;padding:.95rem 1.7rem;border-radius:99px;border:1px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;white-space:nowrap}
+.btn-flame{background:var(--grad);color:#fff;box-shadow:0 12px 28px -12px rgba(232,67,10,.55)}
+.btn-flame:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(232,67,10,.65)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:#CFCBC3}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-night{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+.btn-night:hover{border-color:#fff;transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+a:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:6px}
+
+/* ===== Nav ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .25s ease,box-shadow .25s ease,border-color .25s ease;background:rgba(251,250,248,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(22,24,29,.02)}
+header.scrolled{background:rgba(251,250,248,.92);border-color:var(--line);box-shadow:0 8px 30px -16px rgba(22,24,29,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:600;font-size:1.18rem;letter-spacing:-.01em}
+.logo svg{width:30px;height:30px}
+.nav-links{display:flex;align-items:center;gap:2rem;font-size:.93rem;font-weight:500;color:var(--ink-soft)}
+.nav-links a{position:relative;padding:.3rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--grad);border-radius:2px;transition:width .25s ease}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--ink)}
+.nav .btn{padding:.65rem 1.3rem;font-size:.9rem}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px;transition:.3s}
+@media(max-width:920px){
+  .nav-links{position:fixed;inset:74px 0 auto 0;background:var(--porcelain);flex-direction:column;align-items:flex-start;gap:0;padding:0 24px;max-height:0;overflow:hidden;transition:max-height .35s ease;border-bottom:1px solid var(--line)}
+  .nav-links.open{max-height:460px;padding:12px 24px 24px}
+  .nav-links a{padding:.85rem 0;width:100%;border-bottom:1px solid var(--line)}
+  .nav-links a:last-of-type{border:none}
+  .menu-btn{display:block}
+  .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-btn.open span:nth-child(2){opacity:0}
+  .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-cta-desktop{display:none}
+}
+
+/* ===== Page hero ===== */
+.page-hero{position:relative;padding:128px 0 40px;overflow:hidden;text-align:center}
+.page-hero .hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(to right,rgba(22,24,29,.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(22,24,29,.05) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 35%,transparent 78%);mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000 35%,transparent 78%)}
+.page-hero .hero-glow{position:absolute;top:-240px;left:50%;transform:translateX(-50%);width:900px;height:560px;background:radial-gradient(closest-side,rgba(255,140,60,.15),rgba(255,180,46,.06) 55%,transparent 75%);pointer-events:none}
+.page-hero-inner{position:relative;max-width:680px;margin:0 auto}
+.page-hero h1{font-family:var(--body);font-weight:700;letter-spacing:-.02em;font-size:clamp(2rem,3.6vw,2.9rem);line-height:1.12;margin:1rem 0 .9rem}
+.page-hero h1 .flame-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-hero .lede{font-size:1rem;max-width:520px;margin:0 auto}
+.page-hero .eyebrow::before{display:none}
+
+/* ===== Filter bar ===== */
+.filters{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1.8rem}
+.filter{font-family:var(--body);font-size:.86rem;font-weight:500;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:.5rem 1.1rem;cursor:pointer;transition:all .2s ease}
+.filter:hover{border-color:#CFCBC3;transform:translateY(-1px)}
+.filter.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ===== Horizontal portfolio cards ===== */
+.work{padding-top:36px}
+.work-list{display:flex;flex-direction:column;gap:1.6rem;max-width:1040px;margin:0 auto}
+.case-card{display:grid;grid-template-columns:1.1fr 1fr;background:var(--paper);border:1px solid var(--line);border-radius:calc(var(--radius) + 4px);overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease,border-color .35s ease;cursor:pointer}
+.case-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#DDD9D1}
+.case-card:nth-child(even){grid-template-columns:1fr 1.1fr}
+.case-card:nth-child(even) .case-media{order:2}
+.case-media{position:relative;min-height:340px;background:linear-gradient(135deg,#1A130D,#0E1014 70%);overflow:hidden}
+.case-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.case-card:hover .case-media img{transform:scale(1.05)}
+.case-media .media-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);font-family:var(--display);font-weight:600;font-size:1.1rem;letter-spacing:.05em}
+.case-media::after{content:"";position:absolute;top:-100px;right:-80px;width:300px;height:300px;background:radial-gradient(closest-side,rgba(255,120,40,.28),transparent 70%);pointer-events:none}
+.case-body{padding:2.6rem 2.6rem;display:flex;flex-direction:column}
+.case-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.1rem}
+.case-tag{font-size:.74rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--flame-deep);background:rgba(255,92,26,.07);border:1px solid rgba(255,92,26,.16);border-radius:99px;padding:.32rem .8rem}
+.case-body h3{font-size:1.5rem;margin-bottom:.7rem}
+.case-body .summary{font-size:.98rem;flex:1}
+.case-metrics{display:flex;gap:2rem;flex-wrap:wrap;margin:1.6rem 0 1.7rem}
+.case-metric .m-num{font-family:var(--display);font-weight:600;font-size:1.7rem;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.case-metric .m-cap{font-size:.8rem;color:var(--ash);margin-top:.35rem}
+.case-actions{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+.case-cta{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;color:var(--ink)}
+.case-cta svg{width:18px;height:18px;stroke:var(--flame-deep);transition:transform .25s ease}
+.case-card:hover .case-cta svg{transform:translateX(4px)}
+.case-link{display:inline-flex;align-items:center;gap:.45rem;font-weight:600;font-size:.92rem;color:var(--ash);transition:color .2s ease}
+.case-link:hover{color:var(--flame-deep)}
+.case-link svg{width:15px;height:15px;stroke:currentColor}
+@media(max-width:820px){
+  .case-card,.case-card:nth-child(even){grid-template-columns:1fr}
+  .case-card:nth-child(even) .case-media{order:0}
+  .case-media{min-height:220px}
+  .case-body{padding:2rem 1.8rem}
+}
+
+/* ===== Customer profile / psychology ===== */
+.profiles{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{max-width:680px;margin-bottom:3.4rem}
+.sec-head h2{margin:1rem 0 1rem}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head.center .eyebrow{justify-content:center}
+.sec-head.center .eyebrow::before{display:none}
+.persona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.persona{background:var(--porcelain);border:1px solid var(--line);border-radius:var(--radius);padding:2.1rem 2rem;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.persona:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#DDD9D1}
+.persona .p-ico{width:46px;height:46px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.persona .p-ico svg{width:22px;height:22px;stroke:#fff}
+.persona h3{font-size:1.18rem;margin-bottom:.3rem}
+.persona .p-role{font-size:.84rem;color:var(--flame-deep);font-weight:600;margin-bottom:1rem}
+.persona p{font-size:.92rem;margin-bottom:1.1rem}
+.persona .p-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);margin-bottom:.6rem}
+.persona ul{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-bottom:1.3rem}
+.persona li{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;color:var(--ink-soft)}
+.persona li .dot{flex:none;width:16px;height:16px;border-radius:50%;background:rgba(255,92,26,.1);border:1px solid rgba(255,92,26,.22);display:flex;align-items:center;justify-content:center;margin-top:.18rem}
+.persona li .dot::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--flame-deep)}
+@media(max-width:880px){.persona-grid{grid-template-columns:1fr}}
+
+/* ===== Psychology / trust drivers ===== */
+.psych{background:var(--night);color:#fff}
+.psych .sec-head h2{color:#fff}
+.psych .sec-head p{color:rgba(255,255,255,.6)}
+.psych-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.psych-card{background:var(--night-soft);border:1px solid var(--night-line);border-radius:var(--radius);padding:2rem 2rem;position:relative;overflow:hidden}
+.psych-card .pc-head{display:flex;align-items:center;gap:.9rem;margin-bottom:.9rem}
+.psych-card .pc-ico{flex:none;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid var(--night-line);display:flex;align-items:center;justify-content:center}
+.psych-card .pc-ico svg{width:20px;height:20px;stroke:var(--ember)}
+.psych-card h3{font-size:1.1rem;color:#fff}
+.psych-card .pc-tag{font-size:.74rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ember)}
+.psych-card p{color:rgba(255,255,255,.66);font-size:.93rem}
+.psych-card p strong{color:#fff;font-weight:600}
+@media(max-width:760px){.psych-grid{grid-template-columns:1fr}}
+
+/* ===== CTA band ===== */
+.cta-final{background:var(--night);color:#fff;position:relative;overflow:hidden;text-align:center}
+.cta-final::before{content:"";position:absolute;bottom:-220px;left:50%;transform:translateX(-50%);width:900px;height:520px;background:radial-gradient(closest-side,rgba(255,110,30,.18),transparent 72%);pointer-events:none}
+.cta-final .inner{position:relative;max-width:620px;margin:0 auto}
+.cta-final h2{color:#fff;margin:1rem 0 1.1rem}
+.cta-final p{color:rgba(255,255,255,.66);margin-bottom:2rem}
+.cta-final .ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-final .eyebrow{justify-content:center;color:var(--ember)}
+.cta-final .eyebrow::before{display:none}
+
+/* ===== Footer ===== */
+footer{background:#0A0C0F;color:rgba(255,255,255,.6);padding:70px 0 36px;font-size:.92rem}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:3rem;margin-bottom:3.2rem}
+.foot-brand .logo{color:#fff;margin-bottom:1rem}
+.foot-brand p{color:rgba(255,255,255,.5);max-width:300px;font-size:.9rem}
+footer h4{color:#fff;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.1rem;font-weight:600}
+footer ul{list-style:none}
+footer li{margin-bottom:.65rem}
+footer a:hover{color:#fff}
+.foot-bottom{border-top:1px solid var(--night-line);padding-top:1.8rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:rgba(255,255,255,.4)}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+
+/* ===== Reveal ===== */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in-view{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .ember-line::after{transform:scaleX(1)}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="index.html#top" class="logo" aria-label="White Phoenix home">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 2C16 2 8 9 8 17a8 8 0 0 0 16 0c0-3-1.4-5.4-3-7.4.4 2 .2 4-1.4 5.4.6-3.4-1-7.6-3.6-13Z" fill="url(#fg)"/>
+        <path d="M16 30c-3 0-5.4-1.4-6.9-3.5C10.6 27.4 13 28 16 28s5.4-.6 6.9-1.5C21.4 28.6 19 30 16 30Z" fill="#16181D"/>
+        <defs><linearGradient id="fg" x1="8" y1="2" x2="24" y2="25"><stop stop-color="#FF5C1A"/><stop offset="1" stop-color="#FFB42E"/></linearGradient></defs>
+      </svg>
+      White Phoenix
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="portfolio.html" class="active">Our Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#why-us">Why Us</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <a href="index.html#contact" class="btn btn-flame nav-cta-desktop">Book a Call</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap page-hero-inner reveal in-view">
+    <span class="eyebrow">Selected Work</span>
+    <h1>Products we've shipped, and the <span class="flame-text">thinking behind them.</span></h1>
+    <p class="lede">Every project below is a real business problem we were trusted to solve. Browse the work, then open any one to see the strategy, the build, and the results — start to finish.</p>
+    <div class="filters" id="filters" role="tablist" aria-label="Filter work">
+      <button class="filter active" data-filter="all">All work</button>
+      <button class="filter" data-filter="web">Websites</button>
+      <button class="filter" data-filter="app">Apps</button>
+      <button class="filter" data-filter="software">Custom Software</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK / HORIZONTAL CASE CARDS ============ -->
+<!--
+  TEMPLATE — duplicate one <article class="case-card"> block per portfolio item.
+  • data-category  → web | app | software  (drives the filter buttons above)
+  • href           → the case study page for this project (case-study.html?id=...)
+  • case-media img → replace src with your project screenshot/cover
+  • Fill case-tags, h3, summary, and the three case-metric blocks with real data.
+-->
+<section class="work">
+  <div class="wrap">
+    <div class="work-list" id="workList">
+
+      <article class="case-card reveal" data-category="web" onclick="location.href='case-study.html?id=project-one'">
+        <div class="case-media">
+          <img src="" alt="" loading="lazy" onerror="this.style.display='none'">
+          <div class="media-fallback">Project Cover</div>
+        </div>
+        <div class="case-body">
+          <div class="case-tags">
+            <span class="case-tag">Website</span>
+            <span class="case-tag">E-commerce</span>
+          </div>
+          <h3>Project name goes here</h3>
+          <p class="summary">One or two sentences on what this business needed and what you built for them — the problem, your role, and the headline outcome.</p>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="m-num">2×</div><div class="m-cap">Enquiries / month</div></div>
+            <div class="case-metric"><div class="m-num">1.2s</div><div class="m-cap">Load time</div></div>
+            <div class="case-metric"><div class="m-num">4 wks</div><div class="m-cap">To launch</div></div>
+          </div>
+          <div class="case-actions">
+            <span class="case-cta">Read the case study
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+            <!-- Replace href with the live client URL -->
+            <a class="case-link" href="#" target="_blank" rel="noopener" onclick="event.stopPropagation()">View client website
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card reveal" data-category="app" onclick="location.href='case-study.html?id=project-two'">
+        <div class="case-media">
+          <img src="" alt="" loading="lazy" onerror="this.style.display='none'">
+          <div class="media-fallback">Project Cover</div>
+        </div>
+        <div class="case-body">
+          <div class="case-tags">
+            <span class="case-tag">Mobile App</span>
+            <span class="case-tag">Flutter</span>
+          </div>
+          <h3>Project name goes here</h3>
+          <p class="summary">One or two sentences on what this business needed and what you built for them — the problem, your role, and the headline outcome.</p>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="m-num">10k+</div><div class="m-cap">Downloads</div></div>
+            <div class="case-metric"><div class="m-num">4.8★</div><div class="m-cap">Store rating</div></div>
+            <div class="case-metric"><div class="m-num">iOS+And</div><div class="m-cap">One codebase</div></div>
+          </div>
+          <div class="case-actions">
+            <span class="case-cta">Read the case study
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+            <!-- Replace href with the live client URL -->
+            <a class="case-link" href="#" target="_blank" rel="noopener" onclick="event.stopPropagation()">View client website
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="case-card reveal" data-category="software" onclick="location.href='case-study.html?id=project-three'">
+        <div class="case-media">
+          <img src="" alt="" loading="lazy" onerror="this.style.display='none'">
+          <div class="media-fallback">Project Cover</div>
+        </div>
+        <div class="case-body">
+          <div class="case-tags">
+            <span class="case-tag">Custom Software</span>
+            <span class="case-tag">ERP</span>
+          </div>
+          <h3>Project name goes here</h3>
+          <p class="summary">One or two sentences on what this business needed and what you built for them — the problem, your role, and the headline outcome.</p>
+          <div class="case-metrics">
+            <div class="case-metric"><div class="m-num">−60%</div><div class="m-cap">Manual work</div></div>
+            <div class="case-metric"><div class="m-num">1</div><div class="m-cap">Unified system</div></div>
+            <div class="case-metric"><div class="m-num">Live</div><div class="m-cap">Real-time data</div></div>
+          </div>
+          <div class="case-actions">
+            <span class="case-cta">Read the case study
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+            <!-- Replace href with the live client URL -->
+            <a class="case-link" href="#" target="_blank" rel="noopener" onclick="event.stopPropagation()">View client website
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CUSTOMER PROFILES ============ -->
+<section class="profiles">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Who We Build For</span>
+      <h2>We design around <span class="ember-line">real people</span></h2>
+      <p>Great products start with understanding exactly who's on the other side of the screen — what they want, what they fear, and what makes them act. Here's who we build for.</p>
+    </div>
+    <div class="persona-grid">
+
+      <article class="persona reveal">
+        <div class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>The Growth-Stage Founder</h3>
+        <div class="p-role">SMB owner · 30–50 · India / SE Asia</div>
+        <p>Running a profitable business but held back by manual processes and a website that doesn't match their reputation.</p>
+        <div class="p-label">What they want</div>
+        <ul>
+          <li><span class="dot"></span>A digital presence that wins bigger clients</li>
+          <li><span class="dot"></span>Systems that scale without more headcount</li>
+        </ul>
+        <div class="p-label">What worries them</div>
+        <ul>
+          <li><span class="dot"></span>Agencies that overpromise and vanish</li>
+          <li><span class="dot"></span>Budget spent with nothing to show</li>
+        </ul>
+      </article>
+
+      <article class="persona reveal">
+        <div class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+        <h3>The Operations Lead</h3>
+        <div class="p-role">COO / Ops Head · scaling team</div>
+        <p>Drowning in spreadsheets and WhatsApp threads, needs a single system the whole team can actually trust and use.</p>
+        <div class="p-label">What they want</div>
+        <ul>
+          <li><span class="dot"></span>One source of truth across the operation</li>
+          <li><span class="dot"></span>Less firefighting, more visibility</li>
+        </ul>
+        <div class="p-label">What worries them</div>
+        <ul>
+          <li><span class="dot"></span>A tool the team refuses to adopt</li>
+          <li><span class="dot"></span>Disruption during the switchover</li>
+        </ul>
+      </article>
+
+      <article class="persona reveal">
+        <div class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M5 12H1M23 12h-4"/><circle cx="12" cy="12" r="4"/><path d="m18 6-3 3M9 15l-3 3"/></svg></div>
+        <h3>The Funded Startup</h3>
+        <div class="p-role">Product / tech lead · early stage</div>
+        <p>Needs to ship a credible MVP fast, validate with real users, and build on architecture that won't collapse at scale.</p>
+        <div class="p-label">What they want</div>
+        <ul>
+          <li><span class="dot"></span>Speed to market without throwaway code</li>
+          <li><span class="dot"></span>A partner who thinks like an engineer</li>
+        </ul>
+        <div class="p-label">What worries them</div>
+        <ul>
+          <li><span class="dot"></span>Technical debt that slows the next raise</li>
+          <li><span class="dot"></span>Hidden costs and shifting scope</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PSYCHOLOGY / TRUST DRIVERS ============ -->
+<section class="psych">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" style="color:var(--ember)">The Psychology of Trust</span>
+      <h2>Why these projects converted</h2>
+      <p>Every decision in our work is anchored in how people actually decide. These are the principles we design and build around — and why they earn trust.</p>
+    </div>
+    <div class="psych-grid">
+
+      <article class="psych-card reveal">
+        <div class="pc-head">
+          <div class="pc-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+          <div><span class="pc-tag">Social Proof</span><h3>People follow people</h3></div>
+        </div>
+        <p>Real results, named clients, and visible reviews lower perceived risk. <strong>We lead every case study with proof</strong> — numbers and faces — because buyers trust evidence over claims.</p>
+      </article>
+
+      <article class="psych-card reveal">
+        <div class="pc-head">
+          <div class="pc-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <div><span class="pc-tag">Risk Reversal</span><h3>Remove the fear of loss</h3></div>
+        </div>
+        <p>Loss aversion makes the downside loom larger than the upside. <strong>Fixed quotes, written milestones, and free post-launch support</strong> shift the risk off the client and onto us.</p>
+      </article>
+
+      <article class="psych-card reveal">
+        <div class="pc-head">
+          <div class="pc-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+          <div><span class="pc-tag">Cognitive Ease</span><h3>Clarity feels like competence</h3></div>
+        </div>
+        <p>The brain trusts what it processes easily. <strong>Fast load times, clean layouts, and one obvious next step per screen</strong> make a product feel reliable before a word is read.</p>
+      </article>
+
+      <article class="psych-card reveal">
+        <div class="pc-head">
+          <div class="pc-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div><span class="pc-tag">Authority &amp; Consistency</span><h3>Process signals safety</h3></div>
+        </div>
+        <p>A clear, repeatable process tells buyers you've done this before. <strong>Showing our 8-step method and the reasoning behind each build</strong> turns uncertainty into confidence.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="cta-final">
+  <div class="wrap">
+    <div class="inner reveal">
+      <span class="eyebrow">Let's Talk</span>
+      <h2>Want results like these?</h2>
+      <p>Tell us what you're building. We'll come back within one business day with honest advice — and a clear path forward if we're the right fit.</p>
+      <div class="ctas">
+        <a href="index.html#contact" class="btn btn-flame">Book a Free Discovery Call</a>
+        <a href="index.html#services" class="btn btn-night">Explore Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html#top" class="logo">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M16 2C16 2 8 9 8 17a8 8 0 0 0 16 0c0-3-1.4-5.4-3-7.4.4 2 .2 4-1.4 5.4.6-3.4-1-7.6-3.6-13Z" fill="url(#fg2)"/>
+            <path d="M16 30c-3 0-5.4-1.4-6.9-3.5C10.6 27.4 13 28 16 28s5.4-.6 6.9-1.5C21.4 28.6 19 30 16 30Z" fill="#fff"/>
+            <defs><linearGradient id="fg2" x1="8" y1="2" x2="24" y2="25"><stop stop-color="#FF5C1A"/><stop offset="1" stop-color="#FFB42E"/></linearGradient></defs>
+          </svg>
+          White Phoenix
+        </a>
+        <p>A web development agency and technology consulting company building digital products that help ambitious businesses rise.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">Website Development</a></li>
+          <li><a href="index.html#services">App Development</a></li>
+          <li><a href="index.html#services">Custom Software &amp; ERP</a></li>
+          <li><a href="index.html#services">Tech Consulting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#why-us">Why Us</a></li>
+          <li><a href="index.html#process">Our Process</a></li>
+          <li><a href="portfolio.html">Work</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@whitephoenix.in">hello@whitephoenix.in</a></li>
+          <li><a href="https://wa.me/910000000000">WhatsApp: +91 00000 00000</a></li>
+          <li>Bengaluru, Karnataka, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 White Phoenix Consulting. All rights reserved.</span>
+      <span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scroll state
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>10),{passive:true});
+
+// Mobile menu
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{
+  const open=navLinks.classList.toggle('open');
+  menuBtn.classList.toggle('open',open);
+  menuBtn.setAttribute('aria-expanded',open);
+});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  navLinks.classList.remove('open');menuBtn.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');
+}));
+
+// Scroll reveal
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}});
+},{threshold:.15});
+document.querySelectorAll('.reveal,.sec-head').forEach(el=>io.observe(el));
+
+// Portfolio filter
+const filters=document.getElementById('filters');
+const cards=[...document.querySelectorAll('.case-card')];
+filters.addEventListener('click',e=>{
+  const btn=e.target.closest('.filter');
+  if(!btn)return;
+  filters.querySelectorAll('.filter').forEach(f=>f.classList.remove('active'));
+  btn.classList.add('active');
+  const f=btn.dataset.filter;
+  cards.forEach(c=>{
+    const show=f==='all'||c.dataset.category===f;
+    c.style.display=show?'':'none';
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study — White Phoenix</title>
+<meta name="description" content="A White Phoenix case study — the client, the challenge, our solution, the process, and the measurable results.">
+<link rel="canonical" href="https://whitephoenixconsulting.com/case-study.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="White Phoenix">
+<meta name="theme-color" content="#0E1014">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="White Phoenix">
+<meta property="og:url" content="https://whitephoenixconsulting.com/case-study.html">
+<meta property="og:title" content="Case Study — White Phoenix">
+<meta property="og:description" content="A White Phoenix case study — the client, the challenge, our solution, the process, and the measurable results.">
+<meta property="og:image" content="https://whitephoenixconsulting.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="White Phoenix — Web Development & Technology Consulting">
+<meta property="og:locale" content="en_US">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Case Study — White Phoenix">
+<meta name="twitter:description" content="A White Phoenix case study — the client, the challenge, our solution, the process, and the measurable results.">
+<meta name="twitter:image" content="https://whitephoenixconsulting.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --porcelain:#FBFAF8;
+  --paper:#FFFFFF;
+  --ink:#16181D;
+  --ink-soft:#3A3E47;
+  --ash:#7C818B;
+  --line:#E8E6E1;
+  --flame:#FF5C1A;
+  --flame-deep:#E8430A;
+  --ember:#FFB42E;
+  --night:#0E1014;
+  --night-soft:#171A20;
+  --night-line:rgba(255,255,255,.09);
+  --grad:linear-gradient(92deg,#FF5C1A 0%,#FFB42E 100%);
+  --display:'Clash Display',sans-serif;
+  --body:'Inter',sans-serif;
+  --radius:18px;
+  --shadow:0 18px 50px -22px rgba(22,24,29,.22);
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--porcelain);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3,.display{font-family:var(--display);font-weight:600;line-height:1.12;letter-spacing:-.015em}
+h1{font-size:clamp(1.7rem,2.8vw,2.5rem)}
+h2{font-size:clamp(1.6rem,2.8vw,2.1rem)}
+h3{font-size:1.18rem;line-height:1.3}
+p{color:var(--ink-soft)}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--flame-deep);margin-bottom:.9rem}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--grad);border-radius:2px}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:var(--body);font-weight:600;font-size:.98rem;padding:.95rem 1.7rem;border-radius:99px;border:1px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
+.btn-flame{background:var(--grad);color:#fff;box-shadow:0 12px 28px -12px rgba(232,67,10,.55)}
+.btn-flame:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(232,67,10,.65)}
+.btn-night{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+.btn-night:hover{border-color:#fff;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:#CFCBC3}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:6px}
+
+/* ===== Nav ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .25s ease,box-shadow .25s ease;background:rgba(251,250,248,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.scrolled{background:rgba(251,250,248,.92);box-shadow:0 8px 30px -16px rgba(22,24,29,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:600;font-size:1.18rem;letter-spacing:-.01em}
+.logo svg{width:30px;height:30px}
+.nav-links{display:flex;align-items:center;gap:2rem;font-size:.93rem;font-weight:500;color:var(--ink-soft)}
+.nav-links a{position:relative;padding:.3rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--grad);border-radius:2px;transition:width .25s ease}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--ink)}
+.nav .btn{padding:.65rem 1.3rem;font-size:.9rem}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px;transition:.3s}
+@media(max-width:920px){
+  .nav-links{position:fixed;inset:74px 0 auto 0;background:var(--porcelain);flex-direction:column;align-items:flex-start;gap:0;padding:0 24px;max-height:0;overflow:hidden;transition:max-height .35s ease;border-bottom:1px solid var(--line)}
+  .nav-links.open{max-height:460px;padding:12px 24px 24px}
+  .nav-links a{padding:.85rem 0;width:100%;border-bottom:1px solid var(--line)}
+  .nav-links a:last-of-type{border:none}
+  .menu-btn{display:block}
+  .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-btn.open span:nth-child(2){opacity:0}
+  .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-cta-desktop{display:none}
+}
+
+section{padding:84px 0}
+@media(max-width:760px){section{padding:60px 0}}
+.media-fallback{display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);font-family:var(--display);font-weight:600;letter-spacing:.04em;text-align:center;padding:1rem}
+
+/* ===== Hero (text left + quick facts, media right) ===== */
+.cs-hero{position:relative;padding:124px 0 0;overflow:hidden}
+.cs-hero .hero-glow{position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:880px;height:520px;background:radial-gradient(closest-side,rgba(255,140,60,.14),transparent 72%);pointer-events:none}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;color:var(--ink-soft);margin-bottom:1.8rem;transition:color .2s}
+.back-link:hover{color:var(--flame-deep)}
+.back-link svg{width:16px;height:16px;stroke:currentColor}
+.cs-hero-grid{display:grid;grid-template-columns:0.92fr 1.08fr;gap:3.2rem;align-items:center}
+.cs-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.cs-tag{font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--flame-deep);background:rgba(255,92,26,.07);border:1px solid rgba(255,92,26,.16);border-radius:99px;padding:.3rem .75rem}
+.cs-hero h1{margin-bottom:1rem}
+.cs-hero .deck{font-size:1rem;max-width:520px;margin-bottom:1.8rem}
+.cs-facts{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.cs-facts .label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);margin-bottom:.3rem}
+.cs-facts .val{font-weight:600;color:var(--ink);font-size:.92rem}
+.cs-cover{position:relative;width:100%;aspect-ratio:4/3;border-radius:calc(var(--radius) + 6px);overflow:hidden;background:linear-gradient(135deg,#1A130D,#0E1014 70%);box-shadow:var(--shadow)}
+.cs-cover img,.cs-cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cs-cover .media-fallback{position:absolute;inset:0}
+@media(max-width:880px){.cs-hero-grid{grid-template-columns:1fr;gap:2.2rem}.cs-cover{order:-1}}
+
+/* ===== Section heading ===== */
+.sec-head{max-width:720px;margin-bottom:2.4rem}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head.center .eyebrow{justify-content:center}
+.sec-head.center .eyebrow::before{display:none}
+.sec-head h2{margin-bottom:.8rem}
+.sec-head p{font-size:1.02rem}
+
+/* ===== UI snapshots gallery ===== */
+.gallery{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.shot{position:relative;aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,#1A130D,#0E1014 70%)}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.shot:hover img{transform:scale(1.04)}
+.shot .media-fallback{position:absolute;inset:0}
+@media(max-width:860px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.gallery-grid{grid-template-columns:1fr}}
+
+/* ===== About the client ===== */
+.about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:3rem;align-items:center}
+.about-photo{position:relative;aspect-ratio:4/3;border-radius:calc(var(--radius) + 4px);overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,#1A130D,#0E1014 70%)}
+.about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about-photo .media-fallback{position:absolute;inset:0}
+.about-text p{font-size:1.05rem;margin-bottom:1rem}
+.about-text p:last-child{margin-bottom:0}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* ===== Challenge / Solution split ===== */
+.split{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;align-items:start}
+.split-col p{font-size:1.02rem;margin-bottom:1.2rem}
+.cs-list{list-style:none}
+.cs-list li{display:flex;gap:.8rem;align-items:flex-start;padding:.55rem 0;font-size:1rem;color:var(--ink-soft);border-bottom:1px solid var(--line)}
+.cs-list li:last-child{border-bottom:none}
+.cs-list.problems li .mark{flex:none;width:22px;height:22px;border-radius:50%;background:#F2EEE8;color:#B45309;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;margin-top:.12rem}
+.cs-list.solutions li .mark{flex:none;width:22px;height:22px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;margin-top:.12rem}
+.cs-fig{margin-top:1.8rem;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:#0E1014;aspect-ratio:16/10;position:relative}
+.cs-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cs-fig .media-fallback{position:absolute;inset:0}
+@media(max-width:820px){.split-grid{grid-template-columns:1fr;gap:2.4rem}}
+
+/* ===== Process ===== */
+.proc-list{max-width:900px;margin:0 auto}
+.step{display:grid;grid-template-columns:80px 1fr;gap:1.8rem;padding:1.7rem 0;border-bottom:1px solid var(--line);align-items:start}
+.step:last-child{border:none}
+.step .no{font-family:var(--display);font-weight:600;font-size:1.7rem;color:#D9D5CD;line-height:1}
+.step.in-view .no{color:var(--flame-deep)}
+.step h3{margin-bottom:.4rem}
+.step p{font-size:.98rem}
+@media(max-width:600px){.step{grid-template-columns:1fr;gap:.5rem}}
+
+/* ===== Results ===== */
+.results{background:var(--night);color:#fff}
+.results .sec-head h2{color:#fff}
+.results .sec-head p{color:rgba(255,255,255,.62)}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;margin-bottom:2.6rem}
+.result{border-left:1px solid var(--night-line);padding-left:1.4rem}
+.result .num{font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.result .cap{margin-top:.45rem;font-size:.88rem;color:rgba(255,255,255,.6)}
+.results .cs-list li{color:rgba(255,255,255,.82);border-bottom:1px solid var(--night-line)}
+.results .cs-list{max-width:820px}
+.results .cs-list li .mark{background:var(--grad)}
+@media(max-width:860px){.results-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== Testimonial ===== */
+.cs-quote{background:var(--paper);border-bottom:1px solid var(--line)}
+.cs-quote .inner{max-width:860px;margin:0 auto;text-align:center}
+.cs-quote .stars{color:var(--ember);letter-spacing:.2em;margin-bottom:1.2rem}
+.cs-quote blockquote{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,2.4vw,1.9rem);line-height:1.42;letter-spacing:-.01em;color:var(--ink);margin-bottom:1.6rem}
+.cs-quote .who{display:flex;align-items:center;justify-content:center;gap:.85rem}
+.cs-quote .avatar{width:48px;height:48px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;overflow:hidden}
+.cs-quote .avatar img{width:100%;height:100%;object-fit:cover}
+.cs-quote .who strong{display:block;font-size:.96rem}
+.cs-quote .who span{font-size:.84rem;color:var(--ash)}
+
+/* ===== Tech stack ===== */
+.tech{background:var(--porcelain)}
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.tech-item{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem 1.6rem;display:flex;align-items:center;gap:1rem;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.tech-item:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#DDD9D1}
+.tech-item img{width:34px;height:34px;object-fit:contain;flex:none}
+.tech-item .t-cat{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ash);margin-bottom:.2rem}
+.tech-item .t-name{font-weight:600;color:var(--ink);font-size:1rem}
+@media(max-width:760px){.tech-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.tech-grid{grid-template-columns:1fr}}
+
+/* ===== Why us ===== */
+.why{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.why-card{display:flex;gap:1rem;align-items:flex-start;padding:1.6rem 0}
+.why-card .ico{flex:none;width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,rgba(255,92,26,.1),rgba(255,180,46,.1));border:1px solid rgba(255,92,26,.16);display:flex;align-items:center;justify-content:center}
+.why-card .ico svg{width:20px;height:20px;stroke:var(--flame-deep)}
+.why-card h3{font-size:1.08rem;margin-bottom:.35rem}
+.why-card p{font-size:.95rem}
+@media(max-width:760px){.why-grid{grid-template-columns:1fr}}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:760px;margin:0 auto}
+.faq{border-bottom:1px solid var(--line)}
+.faq button{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.4rem 0;font-family:var(--body);font-size:1.02rem;font-weight:600;color:var(--ink);text-align:left}
+.faq button .plus{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid #CFCBC3;display:flex;align-items:center;justify-content:center;font-weight:500;color:var(--ash);transition:transform .3s,background .3s,color .3s,border-color .3s}
+.faq.open button .plus{transform:rotate(45deg);background:var(--grad);color:#fff;border-color:transparent}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq .ans p{padding:0 2.4rem 1.4rem 0;font-size:.96rem}
+
+/* ===== CTA ===== */
+.cta-final{background:var(--night);color:#fff;position:relative;overflow:hidden;text-align:center}
+.cta-final::before{content:"";position:absolute;bottom:-220px;left:50%;transform:translateX(-50%);width:900px;height:520px;background:radial-gradient(closest-side,rgba(255,110,30,.18),transparent 72%);pointer-events:none}
+.cta-final .inner{position:relative;max-width:620px;margin:0 auto}
+.cta-final h2{color:#fff;margin-bottom:1.1rem}
+.cta-final p{color:rgba(255,255,255,.66);margin-bottom:2rem}
+.cta-final .ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-final .eyebrow{justify-content:center;color:var(--ember)}
+.cta-final .eyebrow::before{display:none}
+
+/* ===== Footer ===== */
+footer{background:#0A0C0F;color:rgba(255,255,255,.6);padding:70px 0 36px;font-size:.92rem}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:3rem;margin-bottom:3.2rem}
+.foot-brand .logo{color:#fff;margin-bottom:1rem}
+.foot-brand p{color:rgba(255,255,255,.5);max-width:300px;font-size:.9rem}
+footer h4{color:#fff;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.1rem;font-weight:600}
+footer ul{list-style:none}
+footer li{margin-bottom:.65rem}
+footer a:hover{color:#fff}
+.foot-bottom{border-top:1px solid var(--night-line);padding-top:1.8rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:rgba(255,255,255,.4)}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+
+/* ===== Reveal ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in-view{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="index.html#top" class="logo" aria-label="White Phoenix home">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 2C16 2 8 9 8 17a8 8 0 0 0 16 0c0-3-1.4-5.4-3-7.4.4 2 .2 4-1.4 5.4.6-3.4-1-7.6-3.6-13Z" fill="url(#fg)"/>
+        <path d="M16 30c-3 0-5.4-1.4-6.9-3.5C10.6 27.4 13 28 16 28s5.4-.6 6.9-1.5C21.4 28.6 19 30 16 30Z" fill="#16181D"/>
+        <defs><linearGradient id="fg" x1="8" y1="2" x2="24" y2="25"><stop stop-color="#FF5C1A"/><stop offset="1" stop-color="#FFB42E"/></linearGradient></defs>
+      </svg>
+      White Phoenix
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="portfolio.html" class="active">Our Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#why-us">Why Us</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <a href="index.html#contact" class="btn btn-flame nav-cta-desktop">Book a Call</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!--
+  ============================================================
+  CASE STUDY TEMPLATE — replace placeholder text and media.
+  Sections follow a simple, linear structure:
+  Hero → UI Snapshots → About client → Challenge → Solution →
+  Process → Results → Testimonial → Tech stack → Why us → FAQ → CTA
+  Image/fallback: each <img> has onerror to hide cleanly until
+  you add a real src. Swap any <img> in the hero for <video>.
+  ============================================================
+-->
+
+<!-- ============ 1. HERO ============ -->
+<section class="cs-hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <a href="portfolio.html" class="back-link reveal in-view">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      All work
+    </a>
+    <div class="cs-hero-grid">
+      <div class="reveal in-view">
+        <div class="cs-tags">
+          <span class="cs-tag" data-field="tag1">Custom Software</span>
+          <span class="cs-tag" data-field="tag2">Case Study</span>
+        </div>
+        <h1 data-field="title">Project name — the one-line outcome</h1>
+        <p class="deck" data-field="deck">A single strong sentence that frames the project: who the client is, what they needed, and the result you delivered.</p>
+        <div class="cs-facts">
+          <div><div class="label">Industry</div><div class="val" data-field="industry">Industry</div></div>
+          <div><div class="label">Target market</div><div class="val" data-field="market">Target market</div></div>
+          <div><div class="label">Project</div><div class="val" data-field="project">Web / app / software</div></div>
+          <div><div class="label">Services</div><div class="val" data-field="services">Design, Development</div></div>
+          <div><div class="label">Timeline</div><div class="val" data-field="timeline">Timeline</div></div>
+          <div><div class="label">Key outcome</div><div class="val" data-field="outcome">Headline result</div></div>
+        </div>
+      </div>
+      <div class="cs-cover reveal in-view">
+        <!-- Swap <img> for <video data-field="cover" autoplay muted loop playsinline> to use video -->
+        <img data-field="cover" src="" alt="" onerror="this.style.display='none'">
+        <div class="media-fallback">Hero image / video</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. UI SNAPSHOTS ============ -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Interface Snapshots</span>
+      <h2>A look at the product</h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <!-- Duplicate a .shot per screenshot. -->
+      <div class="shot"><img src="" alt="" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Screen 01</div></div>
+      <div class="shot"><img src="" alt="" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Screen 02</div></div>
+      <div class="shot"><img src="" alt="" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Screen 03</div></div>
+      <div class="shot"><img src="" alt="" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Screen 04</div></div>
+      <div class="shot"><img src="" alt="" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Screen 05</div></div>
+      <div class="shot"><img src="" alt="" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Screen 06</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. ABOUT THE CLIENT ============ -->
+<section>
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <img src="" alt="" loading="lazy" onerror="this.style.display='none'">
+        <div class="media-fallback">Client photo</div>
+      </div>
+      <div class="about-text reveal">
+        <span class="eyebrow">About the client</span>
+        <h2 data-field="client">Client name</h2>
+        <p>A short paragraph introducing the client: who they are, what they do, the market they serve, and why this project mattered to them. Keep it factual and specific to build credibility.</p>
+        <p>Optional second line on their scale, reputation, or the moment that prompted the engagement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. THE CHALLENGE + 5. THE SOLUTION ============ -->
+<section class="split">
+  <div class="wrap">
+    <div class="split-grid">
+
+      <div class="split-col reveal">
+        <span class="eyebrow">The Challenge</span>
+        <h2>What was holding them back</h2>
+        <p>Open with the situation before the project — the manual processes, gaps, or risks the business was living with.</p>
+        <ul class="cs-list problems">
+          <li><span class="mark">!</span>Pain point one — be concrete</li>
+          <li><span class="mark">!</span>Pain point two</li>
+          <li><span class="mark">!</span>Pain point three</li>
+          <li><span class="mark">!</span>Pain point four</li>
+          <li><span class="mark">!</span>Pain point five</li>
+        </ul>
+      </div>
+
+      <div class="split-col reveal">
+        <span class="eyebrow">Our Solution</span>
+        <h2>How we solved it</h2>
+        <p>Explain the approach and the key decisions, tied back to the pain points on the left.</p>
+        <ul class="cs-list solutions">
+          <li><span class="mark">✓</span>What you built to fix pain point one</li>
+          <li><span class="mark">✓</span>Solution two</li>
+          <li><span class="mark">✓</span>Solution three</li>
+          <li><span class="mark">✓</span>Solution four</li>
+          <li><span class="mark">✓</span>Solution five</li>
+        </ul>
+        <figure class="cs-fig">
+          <img src="" alt="" loading="lazy" onerror="this.style.display='none'">
+          <div class="media-fallback">Solution screenshot</div>
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. OUR PROCESS ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Our Process</span>
+      <h2>How we delivered it</h2>
+    </div>
+    <div class="proc-list">
+      <div class="step reveal"><div class="no">01</div><div><h3>Discovery &amp; Alignment</h3><p>What happened in this phase — the goals, the brief, and what was agreed.</p></div></div>
+      <div class="step reveal"><div class="no">02</div><div><h3>Architecture &amp; Planning</h3><p>Key technical and structural decisions made before the build.</p></div></div>
+      <div class="step reveal"><div class="no">03</div><div><h3>UX &amp; Workflow Design</h3><p>How the experience was mapped around the real users and their workflow.</p></div></div>
+      <div class="step reveal"><div class="no">04</div><div><h3>Development</h3><p>The build itself — stack, sprints, and how progress was shared.</p></div></div>
+      <div class="step reveal"><div class="no">05</div><div><h3>Testing &amp; Validation</h3><p>QA, performance, and compliance checks before go-live.</p></div></div>
+      <div class="step reveal"><div class="no">06</div><div><h3>Deployment &amp; Optimisation</h3><p>Launch and the post-launch tuning that followed.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. THE RESULTS ============ -->
+<section class="results">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="color:var(--ember)">The Results</span>
+      <h2>The impact on the business</h2>
+      <p>One line summarising the outcome before the numbers below.</p>
+    </div>
+    <div class="results-grid reveal">
+      <div class="result"><div class="num">95%</div><div class="cap">On-time completion</div></div>
+      <div class="result"><div class="num">87%</div><div class="cap">Less manual work</div></div>
+      <div class="result"><div class="num">240%</div><div class="cap">Network growth</div></div>
+      <div class="result"><div class="num">Live</div><div class="cap">Real-time visibility</div></div>
+    </div>
+    <ul class="cs-list reveal">
+      <li><span class="mark">✓</span>A measurable outcome tied to a specific decision</li>
+      <li><span class="mark">✓</span>A second outcome with context</li>
+      <li><span class="mark">✓</span>A third outcome the client cares about</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 8. TESTIMONIAL ============ -->
+<section class="cs-quote">
+  <div class="wrap">
+    <div class="inner reveal">
+      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <blockquote data-field="quote">"A short, specific quote from the client about working with you and the result they got. Specific beats glowing."</blockquote>
+      <div class="who">
+        <div class="avatar" data-field="quote-initials">CN</div>
+        <div style="text-align:left">
+          <strong data-field="quote-name">Client name</strong>
+          <span data-field="quote-role">Role, Company</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. TECH STACK ============ -->
+<section class="tech">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Tech Stack</span>
+      <h2>What we built it with</h2>
+    </div>
+    <div class="tech-grid reveal">
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/react" alt="" loading="lazy"><div><div class="t-cat">Frontend</div><div class="t-name">React</div></div></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/nodedotjs" alt="" loading="lazy"><div><div class="t-cat">Backend</div><div class="t-name">Node.js</div></div></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/postgresql" alt="" loading="lazy"><div><div class="t-cat">Database</div><div class="t-name">PostgreSQL</div></div></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/stripe" alt="" loading="lazy"><div><div class="t-cat">Payments</div><div class="t-name">Stripe</div></div></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/twilio" alt="" loading="lazy"><div><div class="t-cat">Messaging</div><div class="t-name">Twilio</div></div></div>
+      <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="" loading="lazy"><div><div class="t-cat">Cloud</div><div class="t-name">AWS</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. WHY WHITE PHOENIX ============ -->
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Why White Phoenix</span>
+      <h2>What made the difference</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><h3>Domain understanding</h3><p>We learned how the business actually works before designing a line of it.</p></div>
+      </div>
+      <div class="why-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+        <div><h3>Built to scale</h3><p>Clean architecture that holds up as the volume and the team grow.</p></div>
+      </div>
+      <div class="why-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div><h3>On time, in writing</h3><p>Fixed scope and milestones agreed up front — no surprises mid-project.</p></div>
+      </div>
+      <div class="why-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg></div>
+        <div><h3>We stay after launch</h3><p>30 days of free support, then ongoing care whenever you need it.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. FAQ ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq open">
+        <button aria-expanded="true">How long did this project take?<span class="plus">+</span></button>
+        <div class="ans"><p>Answer specific to this project's timeline and phases.</p></div>
+      </div>
+      <div class="faq">
+        <button aria-expanded="false">What did it cost to build?<span class="plus">+</span></button>
+        <div class="ans"><p>Answer framed around scope and value rather than a flat number — point to the discovery call for a fixed quote.</p></div>
+      </div>
+      <div class="faq">
+        <button aria-expanded="false">Can a similar platform be built for my business?<span class="plus">+</span></button>
+        <div class="ans"><p>Yes — explain how the same approach adapts to their context.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. CTA ============ -->
+<section class="cta-final">
+  <div class="wrap">
+    <div class="inner reveal">
+      <span class="eyebrow">Let's Talk</span>
+      <h2>Have a project like this?</h2>
+      <p>Tell us what you're building. We'll come back within one business day with honest advice — and a clear path forward if we're the right fit.</p>
+      <div class="ctas">
+        <a href="index.html#contact" class="btn btn-flame">Book a Free Discovery Call</a>
+        <a href="portfolio.html" class="btn btn-night">See more work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html#top" class="logo">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M16 2C16 2 8 9 8 17a8 8 0 0 0 16 0c0-3-1.4-5.4-3-7.4.4 2 .2 4-1.4 5.4.6-3.4-1-7.6-3.6-13Z" fill="url(#fg2)"/>
+            <path d="M16 30c-3 0-5.4-1.4-6.9-3.5C10.6 27.4 13 28 16 28s5.4-.6 6.9-1.5C21.4 28.6 19 30 16 30Z" fill="#fff"/>
+            <defs><linearGradient id="fg2" x1="8" y1="2" x2="24" y2="25"><stop stop-color="#FF5C1A"/><stop offset="1" stop-color="#FFB42E"/></linearGradient></defs>
+          </svg>
+          White Phoenix
+        </a>
+        <p>A web development agency and technology consulting company building digital products that help ambitious businesses rise.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">Website Development</a></li>
+          <li><a href="index.html#services">App Development</a></li>
+          <li><a href="index.html#services">Custom Software &amp; ERP</a></li>
+          <li><a href="index.html#services">Tech Consulting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#why-us">Why Us</a></li>
+          <li><a href="index.html#process">Our Process</a></li>
+          <li><a href="portfolio.html">Work</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@whitephoenix.in">hello@whitephoenix.in</a></li>
+          <li><a href="https://wa.me/910000000000">WhatsApp: +91 00000 00000</a></li>
+          <li>Bengaluru, Karnataka, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 White Phoenix Consulting. All rights reserved.</span>
+      <span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scroll state
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>10),{passive:true});
+
+// Mobile menu
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{
+  const open=navLinks.classList.toggle('open');
+  menuBtn.classList.toggle('open',open);
+  menuBtn.setAttribute('aria-expanded',open);
+});
+
+// Scroll reveal
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}});
+},{threshold:.15});
+document.querySelectorAll('.reveal,.step').forEach(el=>io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq').forEach(faq=>{
+  const btn=faq.querySelector('button'),ans=faq.querySelector('.ans');
+  if(faq.classList.contains('open'))ans.style.maxHeight=ans.scrollHeight+'px';
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.faq.open').forEach(o=>{
+      if(o!==faq){o.classList.remove('open');o.querySelector('.ans').style.maxHeight=null;o.querySelector('button').setAttribute('aria-expanded','false');}
+    });
+    const open=faq.classList.toggle('open');
+    ans.style.maxHeight=open?ans.scrollHeight+'px':null;
+    btn.setAttribute('aria-expanded',open);
+  });
+});
+
+/*
+  OPTIONAL — drive multiple case studies from one file via ?id=.
+  Fill CASE_STUDIES keyed by id; any matching [data-field] gets replaced.
+*/
+const CASE_STUDIES={
+  // 'project-one':{ title:'...', deck:'...', industry:'...', market:'...',
+  //   project:'...', services:'...', timeline:'...', outcome:'...',
+  //   tag1:'Custom Software', tag2:'Case Study', cover:'images/p1.jpg', client:'...',
+  //   quote:'...', 'quote-initials':'RK', 'quote-name':'...', 'quote-role':'...' },
+};
+const id=new URLSearchParams(location.search).get('id');
+const data=CASE_STUDIES[id];
+if(data){
+  Object.entries(data).forEach(([k,v])=>{
+    const el=document.querySelector('[data-field="'+k+'"]');
+    if(!el)return;
+    if(k==='cover'){el.src=v;el.style.display='';}
+    else{el.textContent=v;}
+  });
+  document.title=(data.title||'Case Study')+' — White Phoenix';
+}
+</script>
+</body>
+</html>
