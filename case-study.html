@@ -197,8 +197,17 @@ section{padding:84px 0}
 
 /* ===== Challenge / Solution split ===== */
 .split{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;align-items:start}
-.split-col p{font-size:1.02rem;margin-bottom:1.2rem}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;align-items:stretch}
+.split-col{border-radius:var(--radius);padding:2.3rem 2.2rem}
+.split-col .eyebrow{margin-bottom:.7rem}
+.split-col h2{font-size:1.4rem;margin-bottom:.9rem}
+.split-col p{font-size:1rem;margin-bottom:1.3rem}
+.split-col.challenge{background:var(--porcelain);border:1px solid var(--line)}
+.split-col.solution{background:var(--night);color:#fff;box-shadow:0 28px 60px -28px rgba(14,16,20,.5)}
+.split-col.solution .eyebrow{color:var(--ember)}
+.split-col.solution h2{color:#fff}
+.split-col.solution p{color:rgba(255,255,255,.72)}
+.split-col.solution .cs-list li{color:rgba(255,255,255,.88);border-bottom:1px solid var(--night-line)}
 .cs-list{list-style:none}
 .cs-list li{display:flex;gap:.8rem;align-items:flex-start;padding:.55rem 0;font-size:1rem;color:var(--ink-soft);border-bottom:1px solid var(--line)}
 .cs-list li:last-child{border-bottom:none}
@@ -463,7 +472,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="split-grid">
 
-      <div class="split-col reveal">
+      <div class="split-col challenge reveal">
         <span class="eyebrow">The Challenge</span>
         <h2>What was holding them back</h2>
         <p>Picture a typical enquiry. A couple falls for the portfolio, messages to ask about pricing, and then waits. Someone opens Canva, builds a quote by hand around their events and coverage, exports it, and emails it back — often a day or two later. By then the couple has usually asked three other studios too.</p>
@@ -476,7 +485,7 @@ footer a:hover{color:#fff}
         </ul>
       </div>
 
-      <div class="split-col reveal">
+      <div class="split-col solution reveal">
         <span class="eyebrow">Our Solution</span>
         <h2>How we solved it</h2>
         <p>We replaced the Canva-and-wait routine with a tool that does the quoting itself. Couples walk through three simple steps, and the moment they finish, a clean quote lands in their inbox — no human in the loop, no overnight delay.</p>
