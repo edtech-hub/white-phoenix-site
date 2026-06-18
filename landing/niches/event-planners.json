@@ -1,0 +1,121 @@
+{
+  "slug": "event-planners",
+  "brand": "GetQuote",
+  "domain": "https://whitephoenixconsulting.com",
+  "meta": {
+    "title": "GetQuote, build client-ready event quotes in minutes, not hours",
+    "description": "GetQuote is the fast, focused quote builder for US event planners. Assemble itemized, on-brand quotes with per-guest pricing, sales tax and gratuity calculated automatically. Send before your competitor replies.",
+    "og_image": "https://whitephoenixconsulting.com/og-image.png"
+  },
+  "form": {
+    "access_key": "70240df0-a44c-4640-a02e-8e5d4bb5a3f9",
+    "subject": "New GetQuote demo request (Event Planners LP)",
+    "reply_to": "aditya@edastra.in"
+  },
+  "nav": {
+    "links": [
+      { "label": "How it works", "href": "#how" },
+      { "label": "Features", "href": "#why" },
+      { "label": "Demo", "href": "#demo" },
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "cta": "Get a Demo"
+  },
+  "hero": {
+    "eyebrow": "Built for US event planners & managers",
+    "headline": "Build client-ready event quotes in",
+    "headline_accent": "minutes, not hours.",
+    "sub": "GetQuote lets event managers assemble itemized, on-brand quotes across venue, catering, AV, staffing, rentals and more, with per-guest pricing, sales tax and gratuity calculated automatically. Send a professional quote before your competitor even replies.",
+    "cta_primary": "Get a Demo",
+    "cta_secondary": "See how it works",
+    "micro": [
+      "No credit card to try",
+      "Set up in minutes",
+      "Built for US tax & gratuity"
+    ]
+  },
+  "trust": {
+    "label": "Why planners trust it",
+    "line": "Made by the team behind WeddingClickz, builders of booking and quoting tools for 100+ events businesses."
+  },
+  "stats": [
+    { "num": 5, "suffix": " min", "cap": "To send a polished, itemized quote" },
+    { "num": 3, "suffix": "–5", "cap": "Planners every client is comparing" },
+    { "num": 100, "suffix": "+", "cap": "Events businesses we've built for" },
+    { "num": 0, "suffix": "", "cap": "Spreadsheets or late-night math" }
+  ],
+  "problem": {
+    "heading": "Quoting an event shouldn't take all night.",
+    "intro": "You won the lead. Now you're stuck rebuilding the same quote from scratch, again.",
+    "pains": [
+      { "icon": "hourglass_top", "title": "Hours lost per quote", "body": "Pulling vendor prices from emails, spreadsheets and old PDFs for every single inquiry, for events that may never book." },
+      { "icon": "calculate", "title": "Math errors that cost you", "body": "One wrong per-head count, a missed tax line, or a forgotten gratuity, and you've either lost margin or embarrassed yourself in front of a client." },
+      { "icon": "trending_down", "title": "Slow quotes lose deals", "body": "Couples and corporate clients shop 3–5 planners. The first professional quote in their inbox usually wins. By the time yours is ready, they've moved on." },
+      { "icon": "draft", "title": "Quotes that look unprofessional", "body": "A plain spreadsheet or a hand-typed email doesn't match the premium experience you're selling." },
+      { "icon": "sync_problem", "title": "Revision chaos", "body": "\"Can we add 30 guests and drop the band?\" Now you're rebuilding the whole thing, unsure which version is current." },
+      { "icon": "visibility_off", "title": "No idea what's working", "body": "You send quotes into a black hole with no view of what was opened, what converted, or what to follow up on." }
+    ],
+    "close": "Every hour on quote admin is an hour not spent booking, or running, events."
+  },
+  "solution": {
+    "heading": "One builder. Every quote. Minutes, not hours.",
+    "body": "GetQuote is a quote builder made specifically for event managers. Pick the event type, add your line items across venue, catering, AV, staffing, rentals and décor, set your guest count, and watch the total build itself, with sales tax, service charge and deposit calculated for you. Lock in your margins privately, then send a clean, branded quote your client can approve in one click.",
+    "body2": "No more spreadsheet gymnastics. No more late-night math. Just fast, accurate, professional quotes that help you win more events and protect every dollar of margin."
+  },
+  "steps_heading": "From inquiry to quote in three steps.",
+  "steps": [
+    { "title": "Build the package", "body": "Choose the event type and add line items from your pre-loaded price catalog, or quick-add custom ones." },
+    { "title": "Set the details", "body": "Enter guest count and pick a package tier. Sales tax, gratuity and deposit calculate automatically." },
+    { "title": "Send & win", "body": "Generate a branded PDF quote, email it instantly, and get notified the moment your client views or accepts it." }
+  ],
+  "why_heading": "Why event managers switch to GetQuote.",
+  "why": [
+    { "title": "Win the speed race", "body": "Send a polished quote in under 5 minutes and be the first planner in the client's inbox, where most bookings are decided." },
+    { "title": "Protect your margin", "body": "Built-in markup, sales tax and gratuity logic means you never under-price or eat a forgotten cost again." },
+    { "title": "Look like the premium choice", "body": "Every quote is branded, itemized and clean, reinforcing the high-end experience clients are paying for." },
+    { "title": "Reusable, not rebuilt", "body": "Save packages and duplicate past quotes, so the next event takes minutes instead of starting over." }
+  ],
+  "demo": {
+    "heading": "See it in action.",
+    "sub": "Build → price → send. Line items on the left, your client-ready total updating live on the right. This is a base prototype. We fully customize it to your services, pricing and brand.",
+    "caption": "A starting point, not a one-size-fits-all tool. It's tailored to how your business actually quotes. Sales tax, service charge and deposit calculated by US state.",
+    "partial": "event-planners.demo.html"
+  },
+  "compare": {
+    "heading": "Not another bloated CRM.",
+    "sub": "HoneyBook, Dubsado, 17hats and Planning Pod are all-in-one CRMs with long onboarding. GetQuote does one job exceptionally well: get a professional quote out the door, fast.",
+    "them_title": "All-in-one CRMs",
+    "them": [
+      "Weeks of setup before you send a single quote",
+      "Pay for invoicing, CRM and workflow bloat you don't use",
+      "Generic templates, not built for per-guest event pricing",
+      "Tax & gratuity left to you to get right"
+    ],
+    "us_title": "GetQuote",
+    "us": [
+      "Sending quotes within minutes of signing up",
+      "One focused tool, priced for the job it does",
+      "Built around event line items, guest counts and packages",
+      "US sales tax, service charge & deposits handled automatically"
+    ]
+  },
+  "faq_heading": "Questions, answered.",
+  "faqs": [
+    { "q": "Is this customized to my business?", "a": "Yes, completely. What you see here is a base prototype. We tailor it to exactly how your business quotes: your services, pricing tiers, packages, state tax rules, deposit terms and branding. The demo shows the engine; the call is where we shape it around your workflow. Once it's custom-built, we hand it over to you to run." },
+    { "q": "Do I have to enter my prices every time?", "a": "No. Set up your price catalog once and reuse it across every quote." },
+    { "q": "Can I match my brand?", "a": "Yes. Add your logo, colors and terms so every quote looks like yours." },
+    { "q": "Does it handle sales tax and gratuity?", "a": "Yes. Set your state tax rate and service charge once and they apply automatically to every quote." },
+    { "q": "What event types does it support?", "a": "Weddings, corporate events, galas, fundraisers, private parties, conferences. Any event you quote." },
+    { "q": "Can clients accept quotes online?", "a": "Yes, with one-click view and accept, and you're notified the moment they open or approve it." },
+    { "q": "How do we get started?", "a": "It starts with a free demo, no credit card and no commitment. We build a working version around your business, you try it on your own events, and once it's right we hand it over to you to run." },
+    { "q": "Is my data secure?", "a": "Yes. Your pricing and client data are encrypted in transit and at rest, and never shared." }
+  ],
+  "final": {
+    "heading": "Send your next quote in 5 minutes.",
+    "sub": "Book a quick demo and we'll tailor GetQuote to your business: your services, pricing, packages and branding, so it fits how you actually quote, from day one.",
+    "form_title": "Book your demo",
+    "form_sub": "Tell us about your events. We'll reply within one business day.",
+    "reassurance": "No credit card · Built around your business · Yours to run"
+  },
+  "footer_tagline": "The fast, focused quote builder for US event planners. Win the speed race, protect your margin."
+}

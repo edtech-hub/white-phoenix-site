@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GetQuote, build client-ready event quotes in minutes, not hours</title>
+<meta name="description" content="GetQuote is the fast, focused quote builder for US event planners. Assemble itemized, on-brand quotes with per-guest pricing, sales tax and gratuity calculated automatically. Send before your competitor replies.">
+<link rel="canonical" href="https://whitephoenixconsulting.com/lp/event-planners.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0E1014">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GetQuote">
+<meta property="og:url" content="https://whitephoenixconsulting.com/lp/event-planners.html">
+<meta property="og:title" content="GetQuote, build client-ready event quotes in minutes, not hours">
+<meta property="og:description" content="GetQuote is the fast, focused quote builder for US event planners. Assemble itemized, on-brand quotes with per-guest pricing, sales tax and gratuity calculated automatically. Send before your competitor replies.">
+<meta property="og:image" content="https://whitephoenixconsulting.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GetQuote, build client-ready event quotes in minutes, not hours">
+<meta name="twitter:description" content="GetQuote is the fast, focused quote builder for US event planners. Assemble itemized, on-brand quotes with per-guest pricing, sales tax and gratuity calculated automatically. Send before your competitor replies.">
+<meta name="twitter:image" content="https://whitephoenixconsulting.com/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0&display=swap" rel="stylesheet">
+<style>
+:root{
+  --porcelain:#FBFAF8;--paper:#FFFFFF;--ink:#16181D;--ink-soft:#3A3E47;--ash:#7C818B;
+  --line:#E8E6E1;--flame:#FF5C1A;--flame-deep:#E8430A;--ember:#FFB42E;
+  --night:#0E1014;--night-soft:#171A20;--night-line:rgba(255,255,255,.09);
+  --grad:linear-gradient(92deg,#FF5C1A 0%,#FFB42E 100%);
+  --display:'Clash Display',sans-serif;--body:'Inter',sans-serif;
+  --radius:18px;--shadow:0 18px 50px -22px rgba(22,24,29,.22);--maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--porcelain);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3,.display{font-family:var(--display);font-weight:600;line-height:1.08;letter-spacing:-.015em}
+h2{font-size:clamp(2rem,4vw,3.1rem)}
+h3{font-size:1.32rem;line-height:1.25}
+p{color:var(--ink-soft)}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--flame-deep)}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--grad);border-radius:2px}
+section{padding:104px 0}
+@media(max-width:760px){section{padding:72px 0}}
+.ember-line{position:relative;display:inline-block}
+.ember-line::after{content:"";position:absolute;left:0;bottom:-.14em;width:100%;height:.09em;background:var(--grad);border-radius:99px;transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.2,1) .25s}
+.in-view .ember-line::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:var(--body);font-weight:600;font-size:.98rem;padding:.95rem 1.7rem;border-radius:99px;border:1px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;white-space:nowrap}
+.btn-flame{background:var(--grad);color:#fff;box-shadow:0 12px 28px -12px rgba(232,67,10,.55)}
+.btn-flame:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(232,67,10,.65)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:#CFCBC3}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+a:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:6px}
+/* Nav */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .25s ease,box-shadow .25s ease,border-color .25s ease;background:rgba(251,250,248,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.scrolled{background:rgba(251,250,248,.94);box-shadow:0 8px 30px -16px rgba(22,24,29,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:600;font-size:1.18rem;letter-spacing:-.01em}
+.logo svg{width:30px;height:30px}
+.nav-links{display:flex;align-items:center;gap:2rem;font-size:.93rem;font-weight:500;color:var(--ink-soft)}
+.nav-links a{position:relative;padding:.3rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--grad);border-radius:2px;transition:width .25s ease}
+.nav-links a:hover::after{width:100%}
+.nav .btn{padding:.65rem 1.3rem;font-size:.9rem}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px;transition:.3s}
+@media(max-width:920px){
+  .nav-links{position:fixed;inset:74px 0 auto 0;background:var(--porcelain);flex-direction:column;align-items:flex-start;gap:0;padding:0 24px;max-height:0;overflow:hidden;transition:max-height .35s ease;border-bottom:1px solid var(--line)}
+  .nav-links.open{max-height:420px;padding:12px 24px 24px}
+  .nav-links a{padding:.85rem 0;width:100%;border-bottom:1px solid var(--line)}
+  .nav-links a:last-of-type{border:none}
+  .menu-btn{display:block}
+  .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-btn.open span:nth-child(2){opacity:0}
+  .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-cta-desktop{display:none}
+  .nav-links .nav-cta-mobile{display:inline-flex;width:100%;margin-top:1rem;border:none;color:#fff;padding:.85rem 1.3rem}
+  .nav-links .nav-cta-mobile::after{display:none}
+}
+.nav-cta-mobile{display:none}
+/* Hero */
+.hero{position:relative;padding:184px 0 88px;overflow:hidden}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(to right,rgba(22,24,29,.05) 1px,transparent 1px),linear-gradient(to bottom,rgba(22,24,29,.05) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 38%,#000 35%,transparent 78%);mask-image:radial-gradient(ellipse 70% 60% at 50% 38%,#000 35%,transparent 78%)}
+.hero-glow{position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:980px;height:620px;background:radial-gradient(closest-side,rgba(255,140,60,.16),rgba(255,180,46,.07) 55%,transparent 75%);pointer-events:none}
+.hero-inner{position:relative;max-width:760px;margin:0 auto;text-align:center}
+.hero h1{font-family:var(--body);font-weight:700;letter-spacing:-.02em;font-size:clamp(2.2rem,4.6vw,3.4rem);line-height:1.12;margin:1.5rem 0 1.6rem}
+.hero h1 .flame-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{font-size:1.08rem;max-width:620px;margin:.2rem auto 2.4rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;justify-content:center}
+.hero-micro{margin-top:1.8rem;font-size:.86rem;color:var(--ash);display:flex;gap:1.4rem;flex-wrap:wrap;justify-content:center}
+.hero .eyebrow::before{display:none}
+.hero-micro span{display:inline-flex;align-items:center;gap:.4rem}
+.hero-micro svg{width:14px;height:14px;flex:none;stroke:var(--flame-deep)}
+.hero-shot{position:relative;max-width:1080px;margin:3.4rem auto 0}
+/* Trust */
+.trust{padding:42px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust .label{text-align:center;font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);margin-bottom:.9rem}
+.trust p{text-align:center;max-width:760px;margin:0 auto;font-family:var(--display);font-weight:500;font-size:clamp(1.05rem,2vw,1.4rem);color:var(--ink);letter-spacing:-.01em}
+/* Stats */
+.stats{background:var(--night);color:#fff;padding:78px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.stat{border-left:1px solid var(--night-line);padding-left:1.6rem}
+.stat .num{font-family:var(--display);font-weight:600;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .cap{margin-top:.55rem;font-size:.92rem;color:rgba(255,255,255,.6)}
+@media(max-width:860px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+/* Section heads */
+.sec-head{max-width:680px;margin-bottom:3rem}
+.sec-head h2{margin:1rem 0 1rem}
+.sec-head p{font-size:1.04rem}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head.center .eyebrow{justify-content:center}
+.sec-head.center .eyebrow::before{display:none}
+/* Cards (pains + why) */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.card-grid.two{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.9rem;position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease,border-color .3s ease}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#DDD9D1}
+.card-head{display:flex;align-items:center;gap:.85rem;margin-bottom:.7rem}
+.card .ico{flex:none;width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,rgba(255,92,26,.1),rgba(255,180,46,.1));border:1px solid rgba(255,92,26,.16);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem}
+.card-head .ico{margin-bottom:0}
+.card .ico .micon{font-family:'Material Symbols Outlined';font-size:23px;line-height:1;color:var(--flame-deep)}
+.card-head h3{margin-bottom:0}
+.card .n{font-family:var(--display);font-weight:600;color:var(--flame-deep);font-size:1rem;margin-bottom:.5rem}
+.card h3{font-size:1.12rem;margin-bottom:.5rem}
+.card p{font-size:.95rem}
+@media(max-width:900px){.card-grid,.card-grid.two{grid-template-columns:1fr}}
+.close-line{text-align:center;max-width:720px;margin:3rem auto 0;font-family:var(--display);font-weight:500;font-size:clamp(1.2rem,2.4vw,1.7rem);color:var(--ink);letter-spacing:-.01em}
+.close-line em{font-style:normal;color:var(--flame-deep)}
+/* Solution band */
+.solution{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.solution .inner{max-width:820px;margin:0 auto;text-align:center}
+.solution h2{margin:1rem 0 1.4rem}
+.solution p{font-size:1.08rem;margin-bottom:1.1rem}
+/* Steps */
+.proc-list{max-width:880px;margin:0 auto}
+.step{display:grid;grid-template-columns:96px 1fr;gap:2rem;padding:2.1rem 0;border-bottom:1px solid var(--line);align-items:start}
+.step:last-child{border:none}
+.step .no{font-family:var(--display);font-weight:600;font-size:2rem;color:#D9D5CD;line-height:1;transition:color .3s}
+.step.in-view .no{color:var(--flame-deep)}
+.step h3{margin-bottom:.55rem}
+.step p{font-size:.98rem;max-width:620px}
+@media(max-width:600px){.step{grid-template-columns:1fr;gap:.6rem}}
+/* Compare */
+.compare{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:940px;margin:0 auto}
+.cmp-col{border-radius:var(--radius);padding:2.3rem 2.2rem}
+.cmp-col.them{background:var(--porcelain);border:1px solid var(--line)}
+.cmp-col.us{background:var(--night);color:#fff;box-shadow:0 28px 60px -28px rgba(14,16,20,.5)}
+.cmp-col h3{margin-bottom:1.5rem;font-size:1.1rem;letter-spacing:.02em}
+.cmp-col.us h3{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.cmp-col ul{list-style:none}
+.cmp-col li{display:flex;gap:.8rem;align-items:flex-start;padding:.72rem 0;font-size:.96rem;border-bottom:1px solid var(--line)}
+.cmp-col.us li{border-bottom:1px solid var(--night-line);color:rgba(255,255,255,.88)}
+.cmp-col li:last-child{border:none}
+.cmp-col .mark{flex:none;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:.15rem;font-size:.7rem;font-weight:700}
+.them .mark{background:#EAE7E1;color:#A9A49B}
+.us .mark{background:var(--grad);color:#fff}
+@media(max-width:760px){.cmp-grid{grid-template-columns:1fr}}
+/* Demo */
+.demo .frame{max-width:1080px;margin:0 auto}
+.demo .caption{text-align:center;font-size:.9rem;color:var(--ash);margin-top:1.4rem}
+/* FAQ */
+.faq-list{max-width:760px;margin:0 auto}
+.faq{border-bottom:1px solid var(--line)}
+.faq button{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.45rem 0;font-family:var(--body);font-size:1.04rem;font-weight:600;color:var(--ink);text-align:left}
+.faq button .plus{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid #CFCBC3;display:flex;align-items:center;justify-content:center;font-weight:500;color:var(--ash);transition:transform .3s,background .3s,color .3s,border-color .3s}
+.faq.open button .plus{transform:rotate(45deg);background:var(--grad);color:#fff;border-color:transparent}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq .ans p{padding:0 2.4rem 1.5rem 0;font-size:.97rem}
+/* CTA / form */
+.cta-final{background:var(--night);color:#fff;position:relative;overflow:hidden}
+.cta-final::before{content:"";position:absolute;bottom:-220px;left:50%;transform:translateX(-50%);width:900px;height:520px;background:radial-gradient(closest-side,rgba(255,110,30,.18),transparent 72%);pointer-events:none}
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;position:relative;align-items:center}
+.cta-left h2{color:#fff;margin:1rem 0 1.1rem}
+.cta-left p{color:rgba(255,255,255,.66);max-width:440px;margin-bottom:1.4rem}
+.cta-perks{list-style:none;margin-top:1.6rem}
+.cta-perks li{display:flex;gap:.8rem;align-items:center;padding:.5rem 0;color:rgba(255,255,255,.8);font-size:.95rem}
+.cta-perks .mark{flex:none;width:20px;height:20px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:700}
+.form-card{background:var(--night-soft);border:1px solid var(--night-line);border-radius:var(--radius);padding:2.2rem}
+.form-card h3{color:#fff;margin-bottom:.4rem}
+.form-card .sub{color:rgba(255,255,255,.55);font-size:.9rem;margin-bottom:1.6rem}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75);margin-bottom:.4rem}
+.field input,.field select,.field textarea{width:100%;background:#0E1014;border:1px solid var(--night-line);border-radius:10px;padding:.8rem .95rem;color:#fff;font-family:var(--body);font-size:.95rem;transition:border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--flame)}
+.field textarea{resize:vertical;min-height:84px}
+.form-card .btn{width:100%;margin-top:.4rem}
+.form-note{margin-top:.9rem;font-size:.8rem;color:rgba(255,255,255,.45);text-align:center}
+@media(max-width:880px){.cta-grid{grid-template-columns:1fr;gap:3rem}}
+/* Footer */
+footer{background:#0A0C0F;color:rgba(255,255,255,.6);padding:54px 0 32px;font-size:.92rem}
+.foot-top{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start;margin-bottom:2.4rem}
+.foot-brand .logo{color:#fff;margin-bottom:.9rem}
+.foot-brand p{color:rgba(255,255,255,.5);max-width:340px;font-size:.9rem}
+.foot-bottom{border-top:1px solid var(--night-line);padding-top:1.6rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:rgba(255,255,255,.4)}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in-view{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .ember-line::after{transform:scaleX(1)}
+  html{scroll-behavior:auto}
+}
+/* ===== Demo mockup (scoped) ===== */
+.gq{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 30px 70px -30px rgba(22,24,29,.4);overflow:hidden}
+.gq-chrome{display:flex;align-items:center;gap:.5rem;padding:.7rem 1rem;background:#F3F1ED;border-bottom:1px solid var(--line)}
+.gq-dot{width:11px;height:11px;border-radius:50%}
+.gq-url{margin-left:.8rem;font-size:.78rem;color:var(--ash);background:#fff;border:1px solid var(--line);border-radius:7px;padding:.25rem .8rem}
+.gq-shell{display:grid;grid-template-columns:210px 1fr;min-height:524px}
+.gq-side{background:#fff;border-right:1px solid var(--line);padding:1.05rem .85rem;display:flex;flex-direction:column;gap:.18rem}
+.gq-brand{display:flex;align-items:center;gap:.55rem;font-family:var(--display);font-weight:600;font-size:1.02rem;color:var(--ink);padding:.1rem .35rem .85rem}
+.gq-brand-mark{flex:none;width:26px;height:26px;border-radius:8px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.92rem}
+.gq-new{display:flex;align-items:center;gap:.45rem;background:var(--grad);color:#fff;font-weight:600;font-size:.86rem;border-radius:10px;padding:.6rem .8rem;margin-bottom:.65rem;box-shadow:0 10px 20px -12px rgba(232,67,10,.6)}
+.gq-new .micon{font-family:'Material Symbols Outlined';font-size:18px}
+.gq-nav{display:flex;flex-direction:column;gap:.12rem}
+.gq-nav-i{display:flex;align-items:center;gap:.65rem;font-size:.87rem;font-weight:500;color:var(--ash);padding:.52rem .6rem;border-radius:9px}
+.gq-nav-i .micon{font-family:'Material Symbols Outlined';font-size:19px;flex:none}
+.gq-nav-i.gq-on{background:rgba(255,92,26,.09);color:var(--flame-deep);font-weight:600}
+.gq-tag{margin-left:auto;font-size:.68rem;font-weight:700;background:var(--grad);color:#fff;border-radius:99px;padding:.05rem .42rem}
+.gq-side-foot{margin-top:auto;display:flex;flex-direction:column;gap:.4rem;padding-top:.6rem;border-top:1px solid var(--line)}
+.gq-user{display:flex;align-items:center;gap:.55rem;padding:.25rem .4rem}
+.gq-ava{flex:none;width:30px;height:30px;border-radius:50%;background:#16181D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700}
+.gq-user b{display:block;font-size:.82rem;color:var(--ink);line-height:1.2}
+.gq-user i{font-style:normal;font-size:.72rem;color:var(--ash)}
+.gq-main{display:flex;flex-direction:column;background:var(--porcelain);min-width:0}
+.gq-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 1.25rem;background:#fff;border-bottom:1px solid var(--line)}
+.gq-crumb{font-size:.73rem;color:var(--ash)}
+.gq-crumb b{color:var(--ink-soft);font-weight:600}
+.gq-title{display:flex;align-items:center;gap:.55rem;font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink);margin-top:.18rem}
+.gq-stat{font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9A7B00;background:#FFF3D0;border:1px solid #F1DE9B;border-radius:99px;padding:.16rem .5rem}
+.gq-top-r{display:flex;align-items:center;gap:.5rem;flex:none}
+.gq-tbtn{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:600;color:var(--ink-soft);border:1px solid var(--line);border-radius:9px;padding:.48rem .85rem;background:#fff;white-space:nowrap}
+.gq-tbtn .micon{font-family:'Material Symbols Outlined';font-size:17px}
+.gq-tbtn-go{color:#fff;background:var(--grad);border-color:transparent;box-shadow:0 10px 20px -12px rgba(232,67,10,.55)}
+.gq-body{display:grid;grid-template-columns:1.5fr 1fr;min-width:0}
+.gq-build{padding:1.25rem 1.35rem;border-right:1px solid var(--line);background:#fff;min-width:0}
+.gq-build-top{display:flex;justify-content:space-between;gap:1rem;margin-bottom:1.3rem}
+.gq-label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);margin-bottom:.5rem}
+.gq-evt{display:flex;gap:.45rem;flex-wrap:wrap}
+.gq-pill{font-size:.82rem;font-weight:600;color:var(--ink-soft);background:var(--porcelain);border:1px solid var(--line);border-radius:99px;padding:.35rem .85rem}
+.gq-pill-on{background:var(--grad);color:#fff;border-color:transparent}
+.gq-stepper{display:inline-flex;align-items:center;gap:.7rem;border:1px solid var(--line);border-radius:10px;padding:.3rem .7rem}
+.gq-stepper button{border:none;background:none;font-size:1.1rem;color:var(--ash);cursor:default;line-height:1}
+.gq-stepper b{font-size:1rem;min-width:30px;text-align:center}
+.gq-cat{margin-bottom:1rem}
+.gq-cat-head{display:flex;align-items:center;gap:.5rem;font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--ink);margin-bottom:.45rem}
+.gq-cat-head .micon{font-family:'Material Symbols Outlined';font-size:18px;color:var(--flame-deep)}
+.gq-per{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--flame-deep);background:rgba(255,92,26,.08);border-radius:99px;padding:.15rem .55rem;margin-left:.2rem}
+.gq-line{display:flex;align-items:center;gap:.7rem;padding:.5rem .7rem;border:1px solid var(--line);border-radius:10px;margin-bottom:.4rem;background:#fff;font-size:.9rem}
+.gq-check{flex:none;width:18px;height:18px;border-radius:5px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700}
+.gq-name{flex:1;color:var(--ink-soft)}
+.gq-name i{font-style:normal;color:var(--ash);font-size:.82rem}
+.gq-amt{font-weight:600;color:var(--ink)}
+.gq-add{margin-top:.4rem;font-size:.86rem;font-weight:600;color:var(--flame-deep);border:1px dashed #E2BFA8;border-radius:10px;padding:.6rem;text-align:center;background:rgba(255,92,26,.03)}
+.gq-sum{padding:1.25rem 1.3rem;background:#fff;display:flex;flex-direction:column;min-width:0}
+.gq-sum-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.1rem}
+.gq-logo{font-family:var(--display);font-weight:600;font-size:1rem;color:var(--ink)}
+.gq-logo span{color:var(--flame-deep)}
+.gq-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--flame-deep);background:rgba(255,92,26,.09);border-radius:99px;padding:.22rem .55rem}
+.gq-sum-rows{border-top:1px solid var(--line);padding-top:.6rem}
+.gq-row{display:flex;justify-content:space-between;font-size:.9rem;color:var(--ink-soft);padding:.42rem 0}
+.gq-row i{font-style:normal;color:var(--ash);font-size:.8rem}
+.gq-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:.5rem;padding-top:.9rem;border-top:2px solid var(--ink)}
+.gq-total span{font-family:var(--display);font-weight:600;font-size:1rem}
+.gq-total b{font-family:var(--display);font-weight:700;font-size:1.55rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gq-deposit{display:flex;justify-content:space-between;align-items:center;margin-top:.8rem;background:#fff;border:1px solid var(--line);border-radius:10px;padding:.6rem .8rem;font-size:.88rem;color:var(--ink-soft)}
+.gq-deposit i{font-style:normal;color:var(--ash);font-size:.8rem}
+.gq-deposit b{color:var(--ink)}
+.gq-sum-actions{margin-top:auto;padding-top:1.1rem}
+.gq-send{display:flex;align-items:center;justify-content:center;gap:.4rem;background:var(--grad);color:#fff;font-weight:600;font-size:.9rem;border-radius:10px;padding:.72rem;box-shadow:0 12px 24px -12px rgba(232,67,10,.55)}
+.gq-send .micon{font-family:'Material Symbols Outlined';font-size:17px}
+.gq-status{display:flex;align-items:center;justify-content:center;gap:.4rem;margin-top:.7rem;font-size:.77rem;color:var(--ash)}
+.gq-status .micon{font-family:'Material Symbols Outlined';font-size:15px}
+.gq-live{flex:none;width:7px;height:7px;border-radius:50%;background:#28C840;box-shadow:0 0 0 3px rgba(40,200,64,.18)}
+@media(max-width:760px){
+  .gq-shell{grid-template-columns:58px 1fr}
+  .gq-side{padding:.85rem .45rem}
+  .gq-brand{justify-content:center;padding:.1rem 0 .7rem}
+  .gq-new{justify-content:center;padding:.6rem 0}
+  .gq-nav-i{justify-content:center;padding:.55rem 0}
+  .gq-nav-i .gq-tag{display:none}
+  .gq-user{justify-content:center;padding:.25rem 0}
+  .gq-lbl{display:none}
+  .gq-body{grid-template-columns:1fr}
+  .gq-build{border-right:none;border-bottom:1px solid var(--line)}
+}
+/* ===== Small phones ===== */
+@media(max-width:520px){
+  .wrap{padding:0 18px}
+  .eyebrow{font-size:.7rem;letter-spacing:.1em}
+  h2{font-size:clamp(1.65rem,7vw,2.1rem)}
+  .hero{padding:128px 0 60px}
+  .hero h1{font-size:clamp(1.85rem,8vw,2.3rem);line-height:1.16;margin:1.1rem 0 1.1rem}
+  .hero .lede{font-size:1rem;margin-bottom:1.7rem}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .hero-ctas .btn{width:100%}
+  .hero-micro{gap:.5rem 1.1rem;font-size:.8rem;margin-top:1.4rem}
+  .hero-shot{margin-top:2.2rem}
+  .trust p{font-size:1.05rem}
+  .stats{padding:54px 0}.stats-grid{gap:1.4rem 1.2rem}.stat{padding-left:1.1rem}
+  .sec-head{margin-bottom:2rem}.sec-head p{font-size:.98rem}
+  .card{padding:1.6rem 1.5rem}
+  .close-line{font-size:1.15rem;margin-top:2.2rem}
+  .solution p{font-size:1rem}
+  .step{padding:1.6rem 0}.step .no{font-size:1.6rem}
+  .cmp-col{padding:1.8rem 1.6rem}
+  .cta-grid{gap:2.2rem}.cta-left p,.form-card{}
+  .form-card{padding:1.6rem 1.4rem}
+  .foot-top{flex-direction:column;align-items:flex-start;gap:1.3rem}
+  /* demo mockup compaction */
+  .gq-chrome{padding:.6rem .8rem}.gq-url{display:none}
+  .gq-top{flex-wrap:wrap;padding:.85rem 1rem}
+  .gq-top-l{flex:1 1 100%}
+  .gq-top-r{flex:1 1 100%}
+  .gq-tbtn{flex:1;justify-content:center}
+  .gq-build{padding:1.1rem 1rem}.gq-sum{padding:1.1rem 1rem}
+  .gq-build-top{gap:.8rem}
+  .gq-line{font-size:.82rem;gap:.5rem;padding:.45rem .6rem}
+  .gq-name i{display:block;margin-top:.05rem}
+  .gq-cat-head{font-size:.88rem}
+  .gq-total b{font-size:1.3rem}
+  .gq-deposit{font-size:.82rem}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="https://whitephoenixconsulting.com/" class="logo" aria-label="White Phoenix main website"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C16 2 8 9 8 17a8 8 0 0 0 16 0c0-3-1.4-5.4-3-7.4.4 2 .2 4-1.4 5.4.6-3.4-1-7.6-3.6-13Z" fill="url(#fg)"/><path d="M16 30c-3 0-5.4-1.4-6.9-3.5C10.6 27.4 13 28 16 28s5.4-.6 6.9-1.5C21.4 28.6 19 30 16 30Z" fill="#16181D"/><defs><linearGradient id="fg" x1="8" y1="2" x2="24" y2="25"><stop stop-color="#FF5C1A"/><stop offset="1" stop-color="#FFB42E"/></linearGradient></defs></svg>White Phoenix</a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation"><a href="#how">How it works</a><a href="#why">Features</a><a href="#demo">Demo</a><a href="#faq">FAQ</a><a href="#book" class="btn btn-flame nav-cta-mobile">Get a Demo</a></nav>
+    <a href="#book" class="btn btn-flame nav-cta-desktop">Get a Demo</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-inner reveal in-view">
+      <span class="eyebrow">Built for US event planners &amp; managers</span>
+      <h1>Build client-ready event quotes in <span class="flame-text">minutes, not hours.</span></h1>
+      <p class="lede">GetQuote lets event managers assemble itemized, on-brand quotes across venue, catering, AV, staffing, rentals and more, with per-guest pricing, sales tax and gratuity calculated automatically. Send a professional quote before your competitor even replies.</p>
+      <div class="hero-ctas">
+        <a href="#book" class="btn btn-flame">Get a Demo</a>
+        <a href="#how" class="btn btn-ghost">See how it works</a>
+      </div>
+      <div class="hero-micro"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No credit card to try</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Set up in minutes</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Built for US tax &amp; gratuity</span></div>
+    </div>
+    <div class="hero-shot"><!-- ===== GetQuote app mockup (static product screenshot) ===== -->
+<div class="gq" aria-label="GetQuote app preview">
+  <!-- browser chrome -->
+  <div class="gq-chrome">
+    <span class="gq-dot" style="background:#FF5F57"></span>
+    <span class="gq-dot" style="background:#FEBC2E"></span>
+    <span class="gq-dot" style="background:#28C840"></span>
+    <span class="gq-url">app.getquote.com/quotes/new</span>
+  </div>
+
+  <div class="gq-shell">
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="gq-side">
+      <div class="gq-brand"><span class="gq-brand-mark">G</span><span class="gq-lbl">GetQuote</span></div>
+      <div class="gq-new"><span class="micon">add</span><span class="gq-lbl">New quote</span></div>
+      <nav class="gq-nav">
+        <a class="gq-nav-i"><span class="micon">dashboard</span><span class="gq-lbl">Dashboard</span></a>
+        <a class="gq-nav-i gq-on"><span class="micon">request_quote</span><span class="gq-lbl">Quotes</span><span class="gq-tag">8</span></a>
+        <a class="gq-nav-i"><span class="micon">menu_book</span><span class="gq-lbl">Catalog</span></a>
+        <a class="gq-nav-i"><span class="micon">groups</span><span class="gq-lbl">Clients</span></a>
+        <a class="gq-nav-i"><span class="micon">bar_chart</span><span class="gq-lbl">Analytics</span></a>
+      </nav>
+      <div class="gq-side-foot">
+        <a class="gq-nav-i"><span class="micon">settings</span><span class="gq-lbl">Settings</span></a>
+        <div class="gq-user"><span class="gq-ava">JS</span><div class="gq-lbl"><b>Jordan Smith</b><i>Smith Events Co.</i></div></div>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <div class="gq-main">
+      <div class="gq-top">
+        <div class="gq-top-l">
+          <div class="gq-crumb">Quotes&nbsp;&rsaquo;&nbsp;<b>New quote</b></div>
+          <div class="gq-title">Garcia &amp; Lee Wedding <span class="gq-stat">Draft</span></div>
+        </div>
+        <div class="gq-top-r">
+          <span class="gq-tbtn"><span class="micon">visibility</span>Preview</span>
+          <span class="gq-tbtn gq-tbtn-go"><span class="micon">send</span>Send quote</span>
+        </div>
+      </div>
+
+      <div class="gq-body">
+        <!-- builder -->
+        <div class="gq-build">
+          <div class="gq-build-top">
+            <div>
+              <span class="gq-label">Event type</span>
+              <div class="gq-evt">
+                <span class="gq-pill gq-pill-on">Wedding</span>
+                <span class="gq-pill">Corporate</span>
+                <span class="gq-pill">Gala</span>
+              </div>
+            </div>
+            <div class="gq-guests">
+              <span class="gq-label">Guests</span>
+              <div class="gq-stepper"><button aria-hidden="true">−</button><b>150</b><button aria-hidden="true">+</button></div>
+            </div>
+          </div>
+
+          <div class="gq-cat">
+            <div class="gq-cat-head"><span class="micon">apartment</span> Venue &amp; Rentals</div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Ballroom rental, 6 hrs</span><span class="gq-amt">$4,500</span></div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Chiavari chairs <i>×150</i></span><span class="gq-amt">$1,050</span></div>
+          </div>
+
+          <div class="gq-cat">
+            <div class="gq-cat-head"><span class="micon">restaurant</span> Catering <span class="gq-per">per guest</span></div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Plated dinner <i>$95 ×150</i></span><span class="gq-amt">$14,250</span></div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Open bar <i>$38 ×150</i></span><span class="gq-amt">$5,700</span></div>
+          </div>
+
+          <div class="gq-cat">
+            <div class="gq-cat-head"><span class="micon">graphic_eq</span> AV &amp; Staffing</div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Sound &amp; lighting package</span><span class="gq-amt">$2,200</span></div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Event staff <i>×8</i></span><span class="gq-amt">$2,560</span></div>
+          </div>
+
+          <div class="gq-add"><span class="micon">add</span> Add line item from catalog</div>
+        </div>
+
+        <!-- live summary -->
+        <div class="gq-sum">
+          <div class="gq-sum-head">
+            <div class="gq-logo">Smith Events <span>Co.</span></div>
+            <span class="gq-badge"><i class="gq-live"></i> Live</span>
+          </div>
+          <div class="gq-sum-rows">
+            <div class="gq-row"><span>Subtotal</span><span>$30,260</span></div>
+            <div class="gq-row"><span>Per guest <i>(150)</i></span><span>$201.73</span></div>
+            <div class="gq-row"><span>Sales tax <i>(CA 8.75%)</i></span><span>$2,647.75</span></div>
+            <div class="gq-row"><span>Service charge <i>(20%)</i></span><span>$6,052.00</span></div>
+          </div>
+          <div class="gq-total">
+            <span>Quote total</span>
+            <b>$38,959.75</b>
+          </div>
+          <div class="gq-deposit"><span>Deposit to book <i>(35%)</i></span><b>$13,635.91</b></div>
+          <div class="gq-sum-actions">
+            <span class="gq-send"><span class="micon">send</span> Send to client</span>
+            <span class="gq-status"><span class="micon">visibility</span> Last quote viewed 2m ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="wrap">
+    <div class="label">Why planners trust it</div>
+    <p>Made by the team behind WeddingClickz, builders of booking and quoting tools for 100+ events businesses.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap"><div class="stats-grid"><div class="stat reveal"><div class="num"><span class="count" data-target="5">0</span> min</div><div class="cap">To send a polished, itemized quote</div></div><div class="stat reveal"><div class="num"><span class="count" data-target="3">0</span>–5</div><div class="cap">Planners every client is comparing</div></div><div class="stat reveal"><div class="num"><span class="count" data-target="100">0</span>+</div><div class="cap">Events businesses we&#x27;ve built for</div></div><div class="stat reveal"><div class="num"><span class="count" data-target="0">0</span></div><div class="cap">Spreadsheets or late-night math</div></div></div></div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">The problem</span>
+      <h2><span class="ember-line">Quoting an event shouldn&#x27;t take all night.</span></h2>
+      <p>You won the lead. Now you&#x27;re stuck rebuilding the same quote from scratch, again.</p>
+    </div>
+    <div class="card-grid"><div class="card reveal"><div class="card-head"><div class="ico"><span class="micon">hourglass_top</span></div><h3>Hours lost per quote</h3></div><p>Pulling vendor prices from emails, spreadsheets and old PDFs for every single inquiry, for events that may never book.</p></div><div class="card reveal"><div class="card-head"><div class="ico"><span class="micon">calculate</span></div><h3>Math errors that cost you</h3></div><p>One wrong per-head count, a missed tax line, or a forgotten gratuity, and you&#x27;ve either lost margin or embarrassed yourself in front of a client.</p></div><div class="card reveal"><div class="card-head"><div class="ico"><span class="micon">trending_down</span></div><h3>Slow quotes lose deals</h3></div><p>Couples and corporate clients shop 3–5 planners. The first professional quote in their inbox usually wins. By the time yours is ready, they&#x27;ve moved on.</p></div><div class="card reveal"><div class="card-head"><div class="ico"><span class="micon">draft</span></div><h3>Quotes that look unprofessional</h3></div><p>A plain spreadsheet or a hand-typed email doesn&#x27;t match the premium experience you&#x27;re selling.</p></div><div class="card reveal"><div class="card-head"><div class="ico"><span class="micon">sync_problem</span></div><h3>Revision chaos</h3></div><p>&quot;Can we add 30 guests and drop the band?&quot; Now you&#x27;re rebuilding the whole thing, unsure which version is current.</p></div><div class="card reveal"><div class="card-head"><div class="ico"><span class="micon">visibility_off</span></div><h3>No idea what&#x27;s working</h3></div><p>You send quotes into a black hole with no view of what was opened, what converted, or what to follow up on.</p></div></div>
+    <p class="close-line">Every hour on quote admin is an hour not spent booking, or running, events.</p>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="wrap"><div class="inner">
+    <span class="eyebrow" style="justify-content:center">The solution</span>
+    <h2><span class="ember-line">One builder. Every quote. Minutes, not hours.</span></h2>
+    <p>GetQuote is a quote builder made specifically for event managers. Pick the event type, add your line items across venue, catering, AV, staffing, rentals and décor, set your guest count, and watch the total build itself, with sales tax, service charge and deposit calculated for you. Lock in your margins privately, then send a clean, branded quote your client can approve in one click.</p>
+    <p>No more spreadsheet gymnastics. No more late-night math. Just fast, accurate, professional quotes that help you win more events and protect every dollar of margin.</p>
+  </div></div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">How it works</span>
+      <h2><span class="ember-line">From inquiry to quote in three steps.</span></h2>
+    </div>
+    <div class="proc-list"><div class="step"><div class="no">01</div><div><h3>Build the package</h3><p>Choose the event type and add line items from your pre-loaded price catalog, or quick-add custom ones.</p></div></div><div class="step"><div class="no">02</div><div><h3>Set the details</h3><p>Enter guest count and pick a package tier. Sales tax, gratuity and deposit calculate automatically.</p></div></div><div class="step"><div class="no">03</div><div><h3>Send &amp; win</h3><p>Generate a branded PDF quote, email it instantly, and get notified the moment your client views or accepts it.</p></div></div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="solution">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Why switch</span>
+      <h2><span class="ember-line">Why event managers switch to GetQuote.</span></h2>
+    </div>
+    <div class="card-grid two"><div class="card reveal"><div class="n">01</div><h3>Win the speed race</h3><p>Send a polished quote in under 5 minutes and be the first planner in the client&#x27;s inbox, where most bookings are decided.</p></div><div class="card reveal"><div class="n">02</div><h3>Protect your margin</h3><p>Built-in markup, sales tax and gratuity logic means you never under-price or eat a forgotten cost again.</p></div><div class="card reveal"><div class="n">03</div><h3>Look like the premium choice</h3><p>Every quote is branded, itemized and clean, reinforcing the high-end experience clients are paying for.</p></div><div class="card reveal"><div class="n">04</div><h3>Reusable, not rebuilt</h3><p>Save packages and duplicate past quotes, so the next event takes minutes instead of starting over.</p></div></div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section id="demo" class="demo">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Interactive demo</span>
+      <h2><span class="ember-line">See it in action.</span></h2>
+      <p>Build → price → send. Line items on the left, your client-ready total updating live on the right. This is a base prototype. We fully customize it to your services, pricing and brand.</p>
+    </div>
+    <div class="frame reveal"><!-- ===== GetQuote app mockup (static product screenshot) ===== -->
+<div class="gq" aria-label="GetQuote app preview">
+  <!-- browser chrome -->
+  <div class="gq-chrome">
+    <span class="gq-dot" style="background:#FF5F57"></span>
+    <span class="gq-dot" style="background:#FEBC2E"></span>
+    <span class="gq-dot" style="background:#28C840"></span>
+    <span class="gq-url">app.getquote.com/quotes/new</span>
+  </div>
+
+  <div class="gq-shell">
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="gq-side">
+      <div class="gq-brand"><span class="gq-brand-mark">G</span><span class="gq-lbl">GetQuote</span></div>
+      <div class="gq-new"><span class="micon">add</span><span class="gq-lbl">New quote</span></div>
+      <nav class="gq-nav">
+        <a class="gq-nav-i"><span class="micon">dashboard</span><span class="gq-lbl">Dashboard</span></a>
+        <a class="gq-nav-i gq-on"><span class="micon">request_quote</span><span class="gq-lbl">Quotes</span><span class="gq-tag">8</span></a>
+        <a class="gq-nav-i"><span class="micon">menu_book</span><span class="gq-lbl">Catalog</span></a>
+        <a class="gq-nav-i"><span class="micon">groups</span><span class="gq-lbl">Clients</span></a>
+        <a class="gq-nav-i"><span class="micon">bar_chart</span><span class="gq-lbl">Analytics</span></a>
+      </nav>
+      <div class="gq-side-foot">
+        <a class="gq-nav-i"><span class="micon">settings</span><span class="gq-lbl">Settings</span></a>
+        <div class="gq-user"><span class="gq-ava">JS</span><div class="gq-lbl"><b>Jordan Smith</b><i>Smith Events Co.</i></div></div>
+      </div>
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <div class="gq-main">
+      <div class="gq-top">
+        <div class="gq-top-l">
+          <div class="gq-crumb">Quotes&nbsp;&rsaquo;&nbsp;<b>New quote</b></div>
+          <div class="gq-title">Garcia &amp; Lee Wedding <span class="gq-stat">Draft</span></div>
+        </div>
+        <div class="gq-top-r">
+          <span class="gq-tbtn"><span class="micon">visibility</span>Preview</span>
+          <span class="gq-tbtn gq-tbtn-go"><span class="micon">send</span>Send quote</span>
+        </div>
+      </div>
+
+      <div class="gq-body">
+        <!-- builder -->
+        <div class="gq-build">
+          <div class="gq-build-top">
+            <div>
+              <span class="gq-label">Event type</span>
+              <div class="gq-evt">
+                <span class="gq-pill gq-pill-on">Wedding</span>
+                <span class="gq-pill">Corporate</span>
+                <span class="gq-pill">Gala</span>
+              </div>
+            </div>
+            <div class="gq-guests">
+              <span class="gq-label">Guests</span>
+              <div class="gq-stepper"><button aria-hidden="true">−</button><b>150</b><button aria-hidden="true">+</button></div>
+            </div>
+          </div>
+
+          <div class="gq-cat">
+            <div class="gq-cat-head"><span class="micon">apartment</span> Venue &amp; Rentals</div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Ballroom rental, 6 hrs</span><span class="gq-amt">$4,500</span></div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Chiavari chairs <i>×150</i></span><span class="gq-amt">$1,050</span></div>
+          </div>
+
+          <div class="gq-cat">
+            <div class="gq-cat-head"><span class="micon">restaurant</span> Catering <span class="gq-per">per guest</span></div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Plated dinner <i>$95 ×150</i></span><span class="gq-amt">$14,250</span></div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Open bar <i>$38 ×150</i></span><span class="gq-amt">$5,700</span></div>
+          </div>
+
+          <div class="gq-cat">
+            <div class="gq-cat-head"><span class="micon">graphic_eq</span> AV &amp; Staffing</div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Sound &amp; lighting package</span><span class="gq-amt">$2,200</span></div>
+            <div class="gq-line"><span class="gq-check">✓</span><span class="gq-name">Event staff <i>×8</i></span><span class="gq-amt">$2,560</span></div>
+          </div>
+
+          <div class="gq-add"><span class="micon">add</span> Add line item from catalog</div>
+        </div>
+
+        <!-- live summary -->
+        <div class="gq-sum">
+          <div class="gq-sum-head">
+            <div class="gq-logo">Smith Events <span>Co.</span></div>
+            <span class="gq-badge"><i class="gq-live"></i> Live</span>
+          </div>
+          <div class="gq-sum-rows">
+            <div class="gq-row"><span>Subtotal</span><span>$30,260</span></div>
+            <div class="gq-row"><span>Per guest <i>(150)</i></span><span>$201.73</span></div>
+            <div class="gq-row"><span>Sales tax <i>(CA 8.75%)</i></span><span>$2,647.75</span></div>
+            <div class="gq-row"><span>Service charge <i>(20%)</i></span><span>$6,052.00</span></div>
+          </div>
+          <div class="gq-total">
+            <span>Quote total</span>
+            <b>$38,959.75</b>
+          </div>
+          <div class="gq-deposit"><span>Deposit to book <i>(35%)</i></span><b>$13,635.91</b></div>
+          <div class="gq-sum-actions">
+            <span class="gq-send"><span class="micon">send</span> Send to client</span>
+            <span class="gq-status"><span class="micon">visibility</span> Last quote viewed 2m ago</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+    <p class="caption">A starting point, not a one-size-fits-all tool. It&#x27;s tailored to how your business actually quotes. Sales tax, service charge and deposit calculated by US state.</p>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">How we're different</span>
+      <h2><span class="ember-line">Not another bloated CRM.</span></h2>
+      <p>HoneyBook, Dubsado, 17hats and Planning Pod are all-in-one CRMs with long onboarding. GetQuote does one job exceptionally well: get a professional quote out the door, fast.</p>
+    </div>
+    <div class="cmp-grid">
+      <div class="cmp-col them reveal"><h3>All-in-one CRMs</h3><ul><li><span class="mark">✕</span>Weeks of setup before you send a single quote</li><li><span class="mark">✕</span>Pay for invoicing, CRM and workflow bloat you don&#x27;t use</li><li><span class="mark">✕</span>Generic templates, not built for per-guest event pricing</li><li><span class="mark">✕</span>Tax &amp; gratuity left to you to get right</li></ul></div>
+      <div class="cmp-col us reveal"><h3>GetQuote</h3><ul><li><span class="mark">✓</span>Sending quotes within minutes of signing up</li><li><span class="mark">✓</span>One focused tool, priced for the job it does</li><li><span class="mark">✓</span>Built around event line items, guest counts and packages</li><li><span class="mark">✓</span>US sales tax, service charge &amp; deposits handled automatically</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">FAQ</span>
+      <h2><span class="ember-line">Questions, answered.</span></h2>
+    </div>
+    <div class="faq-list"><div class="faq"><button aria-expanded="false"><span>Is this customized to my business?</span><span class="plus">+</span></button><div class="ans"><p>Yes, completely. What you see here is a base prototype. We tailor it to exactly how your business quotes: your services, pricing tiers, packages, state tax rules, deposit terms and branding. The demo shows the engine; the call is where we shape it around your workflow. Once it&#x27;s custom-built, we hand it over to you to run.</p></div></div><div class="faq"><button aria-expanded="false"><span>Do I have to enter my prices every time?</span><span class="plus">+</span></button><div class="ans"><p>No. Set up your price catalog once and reuse it across every quote.</p></div></div><div class="faq"><button aria-expanded="false"><span>Can I match my brand?</span><span class="plus">+</span></button><div class="ans"><p>Yes. Add your logo, colors and terms so every quote looks like yours.</p></div></div><div class="faq"><button aria-expanded="false"><span>Does it handle sales tax and gratuity?</span><span class="plus">+</span></button><div class="ans"><p>Yes. Set your state tax rate and service charge once and they apply automatically to every quote.</p></div></div><div class="faq"><button aria-expanded="false"><span>What event types does it support?</span><span class="plus">+</span></button><div class="ans"><p>Weddings, corporate events, galas, fundraisers, private parties, conferences. Any event you quote.</p></div></div><div class="faq"><button aria-expanded="false"><span>Can clients accept quotes online?</span><span class="plus">+</span></button><div class="ans"><p>Yes, with one-click view and accept, and you&#x27;re notified the moment they open or approve it.</p></div></div><div class="faq"><button aria-expanded="false"><span>How do we get started?</span><span class="plus">+</span></button><div class="ans"><p>It starts with a free demo, no credit card and no commitment. We build a working version around your business, you try it on your own events, and once it&#x27;s right we hand it over to you to run.</p></div></div><div class="faq"><button aria-expanded="false"><span>Is my data secure?</span><span class="plus">+</span></button><div class="ans"><p>Yes. Your pricing and client data are encrypted in transit and at rest, and never shared.</p></div></div></div>
+  </div>
+</section>
+
+<!-- FINAL CTA + FORM -->
+<section id="book" class="cta-final">
+  <div class="wrap"><div class="cta-grid">
+    <div class="cta-left reveal">
+      <span class="eyebrow" style="color:var(--ember)">GetQuote</span>
+      <h2><span class="ember-line">Send your next quote in 5 minutes.</span></h2>
+      <p>Book a quick demo and we&#x27;ll tailor GetQuote to your business: your services, pricing, packages and branding, so it fits how you actually quote, from day one.</p>
+      <ul class="cta-perks">
+        <li><span class="mark">✓</span>Fully customized to your business: services, pricing &amp; brand</li>
+        <li><span class="mark">✓</span>Once it's custom-built, we hand it over to you to run</li>
+        <li><span class="mark">✓</span>No credit card · Built around your business · Yours to run</li>
+      </ul>
+    </div>
+    <div class="form-card reveal">
+      <h3>Book your demo</h3>
+      <p class="sub">Tell us about your events. We&#x27;ll reply within one business day.</p>
+      <form id="leadForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="70240df0-a44c-4640-a02e-8e5d4bb5a3f9">
+        <input type="hidden" name="subject" value="New GetQuote demo request (Event Planners LP)">
+        <input type="hidden" name="from_name" value="GetQuote Landing Page">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="field"><label for="name">Your name</label><input id="name" name="name" required placeholder="Jordan Smith"></div>
+        <div class="field"><label for="company">Company</label><input id="company" name="company" placeholder="Smith Events Co."></div>
+        <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" required placeholder="you@yourcompany.com"></div>
+        <div class="field"><label for="events">Events per month</label>
+          <select id="events" name="events_per_month">
+            <option value="1-5">1–5</option><option value="6-15">6–15</option>
+            <option value="16-40">16–40</option><option value="40+">40+</option>
+          </select>
+        </div>
+        <div class="field"><label for="msg">Anything we should know? (optional)</label><textarea id="msg" name="message" placeholder="Event types you quote, current tools, biggest headache…"></textarea></div>
+        <button type="submit" class="btn btn-flame">Get a Demo</button>
+        <p class="form-note" id="formStatus">No credit card · Built around your business · Yours to run</p>
+      </form>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="https://whitephoenixconsulting.com/" class="logo"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C16 2 8 9 8 17a8 8 0 0 0 16 0c0-3-1.4-5.4-3-7.4.4 2 .2 4-1.4 5.4.6-3.4-1-7.6-3.6-13Z" fill="url(#fg)"/><path d="M16 30c-3 0-5.4-1.4-6.9-3.5C10.6 27.4 13 28 16 28s5.4-.6 6.9-1.5C21.4 28.6 19 30 16 30Z" fill="#16181D"/><defs><linearGradient id="fg" x1="8" y1="2" x2="24" y2="25"><stop stop-color="#FF5C1A"/><stop offset="1" stop-color="#FFB42E"/></linearGradient></defs></svg>White Phoenix</a>
+        <p>The fast, focused quote builder for US event planners. Win the speed race, protect your margin.</p>
+      </div>
+      <a href="#book" class="btn btn-night">Get a Demo</a>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 White Phoenix. All rights reserved.</span>
+      <span>Made for US event professionals.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>10),{passive:true});
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.classList.toggle('open',open);menuBtn.setAttribute('aria-expanded',open);});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}});},{threshold:.18});
+document.querySelectorAll('.reveal,.step,.sec-head').forEach(el=>io.observe(el));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cio=new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const t=+e.target.dataset.target;if(reduce){e.target.textContent=t;return;}const s=performance.now(),d=1400;const tick=n=>{const p=Math.min((n-s)/d,1);e.target.textContent=Math.round(t*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(tick);};requestAnimationFrame(tick);});},{threshold:.5});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+document.querySelectorAll('.faq').forEach(faq=>{const b=faq.querySelector('button'),a=faq.querySelector('.ans');b.addEventListener('click',()=>{document.querySelectorAll('.faq.open').forEach(o=>{if(o!==faq){o.classList.remove('open');o.querySelector('.ans').style.maxHeight=null;o.querySelector('button').setAttribute('aria-expanded','false');}});const open=faq.classList.toggle('open');a.style.maxHeight=open?a.scrollHeight+'px':null;b.setAttribute('aria-expanded',open);});});
+const f=document.getElementById('leadForm');
+if(f){const st=document.getElementById('formStatus'),bt=f.querySelector('button[type="submit"]');
+f.addEventListener('submit',async e=>{e.preventDefault();bt.disabled=true;const o=bt.textContent;bt.textContent='Sending…';st.style.color='';
+try{const r=await fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)});const d=await r.json();
+if(r.ok&&d.success){f.reset();st.textContent="Thanks, your request is in. We'll reply within one business day.";st.style.color='var(--ember)';}
+else{throw new Error(d.message||'failed');}}catch(err){st.textContent='Something went wrong. Please email us directly.';st.style.color='#ff8a5c';}
+finally{bt.disabled=false;bt.textContent=o;}});}
+</script>
+</body>
+</html>
