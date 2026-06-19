@@ -1,5 +1,7 @@
 {
   "slug": "event-planners",
+  "skip_build": true,
+  "_note": "lp/event-planners.html is now a hand-authored sales letter, not generated from this config. skip_build keeps build.py from overwriting it. Remove the flag to revert to the generated funnel layout.",
   "brand": "White Phoenix",
   "domain": "https://whitephoenixconsulting.com",
   "meta": {

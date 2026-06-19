@@ -677,6 +677,9 @@ def render(cfg, demo_html):
 
 def build_one(path):
     cfg = json.loads(path.read_text())
+    if cfg.get("skip_build"):
+        print(f"  – {path.name}  (skip_build: hand-authored page, not regenerated)")
+        return
     demo_path = NICHES / cfg["demo"]["partial"]
     demo_html = demo_path.read_text() if demo_path.exists() else ""
     OUT.mkdir(exist_ok=True)
