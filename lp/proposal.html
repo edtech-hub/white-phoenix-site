@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>White Phoenix, proposal to build your custom tool</title>
+<meta name="description" content="A White Phoenix proposal: we build your business a custom software tool around your own SOPs, pricing and workflow, then hand it over. You own it.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0E1014">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0&display=swap" rel="stylesheet">
+<style>
+:root{
+  --porcelain:#FBFAF8;--paper:#FFFFFF;--ink:#16181D;--ink-soft:#3A3E47;--ash:#7C818B;
+  --line:#E8E6E1;--flame:#FF5C1A;--flame-deep:#E8430A;--ember:#FFB42E;
+  --night:#0E1014;--night-soft:#171A20;--night-line:rgba(255,255,255,.09);
+  --grad:linear-gradient(92deg,#FF5C1A 0%,#FFB42E 100%);
+  --display:'Clash Display',sans-serif;--body:'Inter',sans-serif;
+  --radius:18px;--shadow:0 18px 50px -22px rgba(22,24,29,.22);--maxw:920px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--porcelain);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+svg{display:block}
+a{color:inherit;text-decoration:none}
+.micon{font-family:'Material Symbols Outlined'}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== Top nav ===== */
+.pnav{position:sticky;top:0;z-index:60;background:rgba(251,250,248,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.pnav-in{max-width:1180px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:1.4rem}
+.logo{display:flex;align-items:center;gap:.55rem;font-family:var(--display);font-weight:600;font-size:1.1rem;letter-spacing:-.01em;color:var(--ink);flex:none}
+.logo svg{width:27px;height:27px}
+.pnav-links{display:flex;align-items:center;gap:1.35rem;font-size:.86rem;font-weight:500;color:var(--ink-soft);overflow-x:auto;flex:1;scrollbar-width:none}
+.pnav-links::-webkit-scrollbar{display:none}
+.pnav-links a{white-space:nowrap;padding:.3rem 0;border-bottom:2px solid transparent}
+.pnav-links a:hover{color:var(--flame-deep);border-color:var(--flame)}
+.pnav .cta{flex:none;background:var(--grad);color:#fff;font-weight:600;font-size:.86rem;padding:.6rem 1.15rem;border-radius:99px;box-shadow:0 10px 22px -12px rgba(232,67,10,.55)}
+@media(max-width:880px){.pnav-links{display:none}.pnav-in{justify-content:space-between}}
+
+/* ===== Section frame ===== */
+.sec{padding:84px 0;border-bottom:1px solid var(--line)}
+.sec.dark{background:var(--night);color:#fff;border-color:var(--night-line);position:relative;overflow:hidden}
+.sec.dark::before{content:"";position:absolute;top:-160px;right:-120px;width:520px;height:520px;background:radial-gradient(closest-side,rgba(255,110,30,.16),transparent 70%);pointer-events:none}
+.inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative}
+.prog{display:inline-flex;align-items:center;gap:.7rem;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--flame-deep);margin-bottom:1.2rem}
+.dark .prog{color:var(--ember)}
+.prog .bar{width:34px;height:2px;background:var(--grad);border-radius:2px}
+h1{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.08;font-size:clamp(2.2rem,5vw,3.4rem)}
+h2{font-family:var(--display);font-weight:600;letter-spacing:-.015em;line-height:1.12;font-size:clamp(1.7rem,3.6vw,2.5rem);margin-bottom:1.1rem}
+.dark h2,.dark h1{color:#fff}
+h3{font-family:var(--display);font-weight:600;font-size:1.2rem;line-height:1.25;margin-bottom:.5rem}
+.lead{font-size:1.12rem;color:var(--ink-soft);max-width:680px;margin-bottom:1.4rem}
+.dark .lead{color:rgba(255,255,255,.74)}
+p{color:var(--ink-soft);margin-bottom:1.1rem}
+.dark p{color:rgba(255,255,255,.7)}
+p strong{color:var(--ink);font-weight:600}.dark p strong{color:#fff}
+.hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ===== Cover ===== */
+.cover{padding:120px 0 84px;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.cover-glow{position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:980px;height:600px;background:radial-gradient(closest-side,rgba(255,140,60,.16),rgba(255,180,46,.06) 55%,transparent 75%);pointer-events:none}
+.cover h1{margin:1rem 0 1.3rem;max-width:880px}
+.cover .lead{font-size:1.18rem;max-width:720px}
+.meta-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2.6rem 0 2rem}
+.meta{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.3rem}
+.meta .k{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);margin-bottom:.45rem}
+.meta .v{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink);line-height:1.2}
+.meta .s{font-size:.86rem;color:var(--ash);margin-top:.2rem}
+.cover-callouts{display:flex;gap:.6rem;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:.45rem;font-size:.84rem;font-weight:600;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:.45rem .9rem}
+.chip .micon{font-size:17px;color:var(--flame-deep)}
+@media(max-width:760px){.meta-cards{grid-template-columns:1fr}}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--body);font-weight:600;font-size:1rem;padding:.95rem 1.7rem;border-radius:99px;border:1px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}
+.btn-flame{background:var(--grad);color:#fff;box-shadow:0 12px 28px -12px rgba(232,67,10,.55)}
+.btn-flame:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.25)}
+.btn-ghost:hover{border-color:#fff;transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:8px}
+
+/* ===== Two-column contrast ===== */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.8rem 0}
+.col{border-radius:var(--radius);padding:1.8rem 1.7rem;border:1px solid var(--line)}
+.col.bad{background:var(--porcelain)}
+.col.good{background:#fff;border-color:#F1D8C7;box-shadow:var(--shadow)}
+.dark .col.bad{background:var(--night-soft);border-color:var(--night-line)}
+.dark .col.good{background:var(--night-soft);border-color:rgba(255,92,26,.3)}
+.col h3{margin-bottom:1rem;font-size:1.05rem}
+.dark .col h3{color:#fff}
+.col ul{list-style:none}
+.col li{display:flex;gap:.7rem;align-items:flex-start;padding:.5rem 0;font-size:.97rem;color:var(--ink-soft)}
+.dark .col li{color:rgba(255,255,255,.78)}
+.col .m{flex:none;width:19px;height:19px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.66rem;font-weight:700;margin-top:.18rem}
+.bad .m{background:#EAE7E1;color:#A9A49B}.dark .bad .m{background:rgba(255,255,255,.1);color:rgba(255,255,255,.5)}
+.good .m{background:var(--grad);color:#fff}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+
+/* ===== Lists / features ===== */
+.flist{list-style:none;margin:1rem 0 1.4rem}
+.flist li{position:relative;padding-left:1.7rem;margin-bottom:.7rem;font-size:1rem;color:var(--ink-soft)}
+.dark .flist li{color:rgba(255,255,255,.76)}
+.flist li::before{content:"";position:absolute;left:0;top:.6em;width:.65rem;height:.65rem;border-radius:50%;background:var(--grad)}
+.flist b{color:var(--ink)}.dark .flist b{color:#fff}
+
+/* ===== Callout ===== */
+.callout{border-left:3px solid var(--flame);background:rgba(255,92,26,.05);border-radius:0 12px 12px 0;padding:1.2rem 1.4rem;margin:1.8rem 0}
+.callout .t{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--flame-deep);margin-bottom:.4rem}
+.callout p{margin:0;color:var(--ink-soft)}
+.dark .callout{background:rgba(255,92,26,.1)}.dark .callout p{color:rgba(255,255,255,.82)}
+
+/* ===== Flow diagram ===== */
+.flow{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;margin:1.8rem 0}
+.flow .node{display:inline-flex;align-items:center;gap:.5rem;background:var(--night-soft);border:1px solid var(--night-line);color:#fff;font-weight:600;font-size:.9rem;padding:.6rem 1rem;border-radius:11px}
+.sec:not(.dark) .flow .node{background:#fff;border-color:var(--line);color:var(--ink)}
+.flow .node .micon{font-size:18px;color:var(--flame-deep)}
+.flow .arr{color:var(--ash);font-size:1.1rem}
+
+/* ===== Numbered steps ===== */
+.steps{counter-reset:s;list-style:none;display:grid;gap:1.1rem;margin-top:1.4rem}
+.step{counter-increment:s;display:grid;grid-template-columns:54px 1fr;gap:1.3rem;align-items:start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem 1.6rem}
+.dark .step{background:var(--night-soft);border-color:var(--night-line)}
+.step::before{content:"0" counter(s);font-family:var(--display);font-weight:600;font-size:1.5rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.step p{margin:0;font-size:.97rem}
+
+/* ===== Phases ===== */
+.phase{border-left:2px solid var(--line);padding:0 0 0 1.6rem;margin-left:.4rem}
+.phase .ph{position:relative;padding:0 0 1.7rem}
+.phase .ph:last-child{padding-bottom:0}
+.phase .ph::before{content:"";position:absolute;left:-1.97rem;top:.25rem;width:13px;height:13px;border-radius:50%;background:var(--grad);box-shadow:0 0 0 4px var(--porcelain)}
+.phase .ph .n{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--flame-deep);margin-bottom:.2rem}
+.phase .ph p{margin:.2rem 0 0;font-size:.96rem}
+
+/* ===== Comparison table ===== */
+.ctable{width:100%;border-collapse:collapse;margin-top:1.4rem;font-size:.95rem;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.ctable th,.ctable td{padding:1rem 1.2rem;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.ctable thead th{font-family:var(--display);font-weight:600;font-size:.92rem;background:var(--porcelain)}
+.ctable thead th:last-child{background:rgba(255,92,26,.06);color:var(--flame-deep)}
+.ctable td:first-child{font-weight:600;color:var(--ink);width:28%}
+.ctable td:last-child{color:var(--ink)}
+.ctable tr:last-child td,.ctable tbody tr:last-child td{border-bottom:none}
+@media(max-width:680px){.ctable th,.ctable td{padding:.8rem .8rem;font-size:.86rem}}
+
+/* ===== Stats ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin:1rem 0 2.4rem}
+.stat{border-left:1px solid var(--night-line);padding-left:1.4rem}
+.stat .num{font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .cap{margin-top:.5rem;font-size:.88rem;color:rgba(255,255,255,.6)}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== Case studies ===== */
+.case{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.9rem;margin-top:1.3rem}
+.case-head{display:flex;align-items:center;gap:.9rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.case-ava{flex:none;width:46px;height:46px;border-radius:12px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:1.1rem}
+.case-head .who b{display:block;font-family:var(--display);font-weight:600;font-size:1.08rem;color:var(--ink)}
+.case-head .who span{font-size:.86rem;color:var(--ash)}
+.case-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.2rem 0}
+.cstat{background:var(--porcelain);border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem}
+.cstat .n{font-family:var(--display);font-weight:600;font-size:1.25rem;color:var(--flame-deep);line-height:1}
+.cstat .l{font-size:.78rem;color:var(--ash);margin-top:.3rem}
+.case-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:.4rem}
+.case-cols h4{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);margin-bottom:.5rem}
+.case-cols ul{list-style:none}
+.case-cols li{font-size:.93rem;color:var(--ink-soft);padding:.28rem 0 .28rem 1.1rem;position:relative}
+.case-cols li::before{content:"";position:absolute;left:0;top:.7em;width:.4rem;height:.4rem;border-radius:50%;background:var(--flame)}
+@media(max-width:680px){.case-stats{grid-template-columns:1fr}.case-cols{grid-template-columns:1fr}}
+.proofnote{border:1px dashed #D8C3B4;background:rgba(255,92,26,.03);border-radius:12px;padding:1.1rem 1.3rem;margin-top:1.4rem;font-size:.9rem;color:var(--ash)}
+.proofnote b{color:var(--flame-deep)}
+
+/* ===== Investment ===== */
+.inv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin:1.6rem 0}
+.inv{background:var(--night-soft);border:1px solid var(--night-line);border-radius:var(--radius);padding:1.7rem 1.6rem}
+.inv .ph{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ember);margin-bottom:.6rem}
+.inv h3{color:#fff;font-size:1.1rem}
+.inv .price{font-family:var(--display);font-weight:600;font-size:1.4rem;color:#fff;margin:.5rem 0 .8rem}
+.inv .price span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.inv p{font-size:.92rem;margin:0}
+@media(max-width:760px){.inv-grid{grid-template-columns:1fr}}
+
+/* ===== FAQ ===== */
+.faq{border-bottom:1px solid var(--line)}
+.faq button{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.35rem 0;font-family:var(--body);font-size:1.02rem;font-weight:600;color:var(--ink);text-align:left}
+.faq .plus{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid #CFCBC3;display:flex;align-items:center;justify-content:center;color:var(--ash);transition:.3s}
+.faq.open .plus{transform:rotate(45deg);background:var(--grad);color:#fff;border-color:transparent}
+.faq .a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq .a p{padding:0 2rem 1.35rem 0;font-size:.97rem;margin:0}
+
+/* ===== Contact ===== */
+.contact .lead{color:rgba(255,255,255,.74)}
+.contact-cta{display:flex;gap:1rem;flex-wrap:wrap;margin:2rem 0 2.4rem}
+.ctable.dark-t{background:var(--night-soft);border-color:var(--night-line)}
+.ctable.dark-t th,.ctable.dark-t td{border-color:var(--night-line);color:rgba(255,255,255,.8)}
+.ctable.dark-t td:first-child{color:#fff}
+.cdetails{display:grid;grid-template-columns:repeat(2,1fr);gap:0;background:var(--night-soft);border:1px solid var(--night-line);border-radius:var(--radius);overflow:hidden}
+.cdetails .row{padding:1rem 1.3rem;border-bottom:1px solid var(--night-line)}
+.cdetails .row:nth-child(odd){border-right:1px solid var(--night-line)}
+.cdetails .k{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.25rem}
+.cdetails .v{color:#fff;font-weight:500}
+@media(max-width:600px){.cdetails{grid-template-columns:1fr}.cdetails .row:nth-child(odd){border-right:none}}
+
+footer{background:#0A0C0F;color:rgba(255,255,255,.5);padding:34px 24px;font-size:.86rem;text-align:center}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="pnav">
+  <div class="pnav-in">
+    <a href="https://whitephoenixconsulting.com/" class="logo" aria-label="White Phoenix"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 2C16 2 8 9 8 17a8 8 0 0 0 16 0c0-3-1.4-5.4-3-7.4.4 2 .2 4-1.4 5.4.6-3.4-1-7.6-3.6-13Z" fill="url(#fg)"/><path d="M16 30c-3 0-5.4-1.4-6.9-3.5C10.6 27.4 13 28 16 28s5.4-.6 6.9-1.5C21.4 28.6 19 30 16 30Z" fill="#16181D"/><defs><linearGradient id="fg" x1="8" y1="2" x2="24" y2="25"><stop stop-color="#FF5C1A"/><stop offset="1" stop-color="#FFB42E"/></linearGradient></defs></svg>White Phoenix</a>
+    <div class="pnav-links">
+      <a href="#overview">Overview</a><a href="#offer">Offer</a><a href="#process">Process</a><a href="#build">The Build</a><a href="#tech">Under the Hood</a><a href="#quality">Quality</a><a href="#delivery">Delivery</a><a href="#proof">Proof</a><a href="#investment">Investment</a><a href="#faq">FAQ</a>
+    </div>
+    <a href="#contact" class="cta">Book a scoping call</a>
+  </div>
+</nav>
+
+<!-- ===== COVER ===== -->
+<header class="cover" id="overview">
+  <div class="cover-glow" aria-hidden="true"></div>
+  <div class="inner">
+    <div class="prog"><span class="bar"></span>Proposal · 01 / 10</div>
+    <span class="chip" style="margin-bottom:.4rem"><span class="micon">bolt</span>Built for service businesses that run on repeatable workflows</span>
+    <h1>A custom software tool, built around how <span class="hl">your business already works.</span></h1>
+    <p class="lead">This proposal is for a single, focused build: we map your services, pricing and SOPs, build a tool that runs the way you already do, prove it on your real work, then hand it over. You own it outright. No generic SaaS to rent, no bending your process to fit someone else's software.</p>
+    <div class="meta-cards">
+      <div class="meta"><div class="k">Prepared by</div><div class="v">White Phoenix</div><div class="s">Builders behind WeddingClickz</div></div>
+      <div class="meta"><div class="k">Prepared for</div><div class="v">[Your business]</div><div class="s">[Industry / team size]</div></div>
+      <div class="meta"><div class="k">Deliverable</div><div class="v">One custom tool, yours to own</div><div class="s">Built around your SOPs</div></div>
+    </div>
+    <div class="cover-callouts">
+      <span class="chip"><span class="micon">account_tree</span>Core mechanism: map · build · prove · hand over</span>
+      <span class="chip"><span class="micon">workspace_premium</span>Positioning: custom, owned, built for your edge</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== OFFER ===== -->
+<section class="sec" id="offer">
+  <div class="inner">
+    <div class="prog"><span class="bar"></span>The offer · 02 / 10</div>
+    <h2>Why a tool built for you beats a tool everyone else can rent.</h2>
+    <p class="lead">Off-the-shelf software makes every business in your market equally average. The moment your competitor can buy the same app, the tool stops being an advantage. A tool shaped around your specific pricing, packages and process is something they cannot sign up for.</p>
+
+    <div class="two">
+      <div class="col bad">
+        <h3>What you may be tired of</h3>
+        <ul>
+          <li><span class="m">✕</span>Renting generic SaaS that does eighty percent of the job and fights you on the rest</li>
+          <li><span class="m">✕</span>Bending your workflow to fit someone else's product</li>
+          <li><span class="m">✕</span>Paying forever and owning nothing</li>
+          <li><span class="m">✕</span>Manual steps, spreadsheets and copy-paste between tools</li>
+          <li><span class="m">✕</span>No real edge, because competitors use the exact same stack</li>
+        </ul>
+      </div>
+      <div class="col good">
+        <h3>What you actually want</h3>
+        <ul>
+          <li><span class="m">✓</span>A tool that runs your process the way you already run it</li>
+          <li><span class="m">✓</span>Your pricing, packages, rules and branding built in</li>
+          <li><span class="m">✓</span>Something you own outright, with no monthly lock-in</li>
+          <li><span class="m">✓</span>The repetitive work handled, so the team moves faster</li>
+          <li><span class="m">✓</span>A workflow advantage a competitor cannot simply buy</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2.2rem">What we are actually offering</h3>
+    <ul class="flist">
+      <li><b>A complete, working tool</b> built around one core job your business does over and over.</li>
+      <li><b>Your SOPs, encoded.</b> Pricing rules, approvals, terms and steps modeled into the software.</li>
+      <li><b>Your data and branding</b> so it looks and behaves like it belongs to you.</li>
+      <li><b>A clean handover.</b> We get it right on your real work, then hand you the keys.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="t">Important</div>
+      <p>This is not a retainer for vague "ongoing work." It is a scoped build with a defined deliverable: a tool that does a specific job for your business, that you own when it is done.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS / HOW IT WORKS ===== -->
+<section class="sec dark" id="process">
+  <div class="inner">
+    <div class="prog"><span class="bar"></span>How it works · 03 / 10</div>
+    <h2>The engine: from your workflow to a tool you own.</h2>
+    <p class="lead">Every build follows the same path. It starts with understanding how you actually operate and ends with software that runs that way on its own.</p>
+
+    <div class="flow">
+      <span class="node"><span class="micon">forum</span>Discover</span><span class="arr">&rsaquo;</span>
+      <span class="node"><span class="micon">account_tree</span>Map your SOPs</span><span class="arr">&rsaquo;</span>
+      <span class="node"><span class="micon">build</span>Build</span><span class="arr">&rsaquo;</span>
+      <span class="node"><span class="micon">science</span>Prove on real work</span><span class="arr">&rsaquo;</span>
+      <span class="node"><span class="micon">key</span>Hand over</span><span class="arr">&rsaquo;</span>
+      <span class="node"><span class="micon">verified</span>You own it</span>
+    </div>
+
+    <ol class="steps">
+      <li class="step"><div><h3>We learn your business</h3><p>We start by understanding how you operate: your goals, your team, your services and what sets you apart from everyone competing for the same work.</p></div></li>
+      <li class="step"><div><h3>We map your SOPs</h3><p>Your process, pricing rules, approvals and terms are written down and modeled, so the tool can run the way your business already does.</p></div></li>
+      <li class="step"><div><h3>We build around your items</h3><p>Your catalog, packages and line items are built to fit you, not a generic template you have to bend your business around.</p></div></li>
+      <li class="step"><div><h3>We prove it on your real work</h3><p>You use it on live jobs, not toy data. We refine it against what actually happens in your business until it earns its place.</p></div></li>
+      <li class="step"><div><h3>We hand it over</h3><p>Once it is right, the tool, the access and the ownership are yours. It keeps working the way your business works.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== THE BUILD / INSTALLATION ===== -->
+<section class="sec" id="build">
+  <div class="inner">
+    <div class="prog"><span class="bar"></span>The build · 04 / 10</div>
+    <h2>How we install it, from first call to a live tool.</h2>
+    <p class="lead">A clear sequence of phases so you always know what is happening and what comes next.</p>
+
+    <div class="phase">
+      <div class="ph"><div class="n">Phase 01</div><h3>Discovery and process audit</h3><p>We sit with you and document the one workflow this tool will own: the steps, the inputs, the rules and the people involved.</p></div>
+      <div class="ph"><div class="n">Phase 02</div><h3>Architecture and modeling</h3><p>We turn your SOPs into a data model and a flow: what gets entered, what gets calculated, what gets produced.</p></div>
+      <div class="ph"><div class="n">Phase 03</div><h3>Build and branding</h3><p>We build the working tool with your catalog, pricing, terms and branding baked in.</p></div>
+      <div class="ph"><div class="n">Phase 04</div><h3>Integration and data</h3><p>We connect it to the tools and data you already use, so it fits your stack instead of adding another silo.</p></div>
+      <div class="ph"><div class="n">Phase 05</div><h3>Testing on live work</h3><p>You run it on real jobs. We fix, tune and refine against what actually happens day to day.</p></div>
+      <div class="ph"><div class="n">Phase 06</div><h3>Handover and training</h3><p>We hand over the tool, the access and a short walkthrough so your team is running it confidently from day one.</p></div>
+    </div>
+
+    <h3 style="margin-top:2.2rem">What we manage after handover</h3>
+    <ul class="flist">
+      <li><b>Optional support</b> if you want us on call for changes as your business grows.</li>
+      <li><b>Enhancements</b> scoped as small follow-on builds when you need new capability.</li>
+      <li><b>No lock-in.</b> The tool is yours whether or not you keep us involved.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== UNDER THE HOOD ===== -->
+<section class="sec dark" id="tech">
+  <div class="inner">
+    <div class="prog"><span class="bar"></span>Under the hood · 05 / 10</div>
+    <h2>Built on your data, fit to your stack, owned by you.</h2>
+    <p class="lead">The parts most people never see are the parts that decide whether a tool actually gets used. Here is what we set up by default.</p>
+    <ul class="flist">
+      <li><b>Your real catalog and pricing</b> modeled as data, not hard-coded, so it is easy to update.</li>
+      <li><b>Automatic calculations</b> for the math your team does by hand today: totals, per-unit pricing, tax, fees, deposits.</li>
+      <li><b>Integrations</b> with the tools you already rely on, so data flows instead of being re-typed.</li>
+      <li><b>Branding and output</b> that produce clean, client-ready documents in your identity.</li>
+      <li><b>Security by default.</b> Your pricing and client data are encrypted in transit and at rest, and never shared.</li>
+      <li><b>Ownership.</b> The codebase and the tool are handed to you. No vendor holding your business hostage.</li>
+    </ul>
+
+    <table class="ctable">
+      <thead><tr><th></th><th>Off-the-shelf SaaS</th><th>White Phoenix build</th></tr></thead>
+      <tbody>
+        <tr><td>What you get</td><td>A generic app everyone in your market can rent</td><td>A tool built around your specific workflow</td></tr>
+        <tr><td>Your edge</td><td>None, competitors run the same software</td><td>A process advantage they cannot buy</td></tr>
+        <tr><td>Fit</td><td>You bend your process to the product</td><td>The product fits your process</td></tr>
+        <tr><td>Ownership</td><td>You rent it forever</td><td>You own it outright</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== QUALITY ===== -->
+<section class="sec" id="quality">
+  <div class="inner">
+    <div class="prog"><span class="bar"></span>Quality and reliability · 06 / 10</div>
+    <h2>How we make sure it actually gets used.</h2>
+    <p class="lead">A tool nobody trusts is shelfware. We design for adoption from the first call, not just delivery.</p>
+
+    <ol class="steps">
+      <li class="step"><div><h3>Built from your real process</h3><p>Because it mirrors how you already work, there is little to "learn." It feels familiar on day one.</p></div></li>
+      <li class="step"><div><h3>Proven on live work before handover</h3><p>We do not declare it done in a demo. It earns sign-off on your actual jobs.</p></div></li>
+      <li class="step"><div><h3>Revisions are part of the build</h3><p>We expect to adjust against reality. Tuning to what really happens is how a custom tool becomes indispensable.</p></div></li>
+    </ol>
+
+    <div class="callout">
+      <div class="t">The outcome</div>
+      <p>A tool your team reaches for by default, because it is faster than the old way and it speaks your language. That is when custom software stops being a project and starts being an advantage.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DELIVERY MODEL ===== -->
+<section class="sec dark" id="delivery">
+  <div class="inner">
+    <div class="prog"><span class="bar"></span>Delivery model · 07 / 10</div>
+    <h2>How we work with you. Scoped build, not a vague retainer.</h2>
+    <p class="lead">A clear split of who does what, so there are no grey areas.</p>
+    <div class="two">
+      <div class="col bad">
+        <h3>What we handle</h3>
+        <ul>
+          <li><span class="m">✓</span>Discovery and SOP mapping</li>
+          <li><span class="m">✓</span>Architecture, build and branding</li>
+          <li><span class="m">✓</span>Integrations and data setup</li>
+          <li><span class="m">✓</span>Testing on your live work</li>
+          <li><span class="m">✓</span>Handover, training and ownership transfer</li>
+        </ul>
+      </div>
+      <div class="col good">
+        <h3>What you handle</h3>
+        <ul>
+          <li><span class="m">✓</span>Clarity on the workflow and the rules</li>
+          <li><span class="m">✓</span>Access to your current tools and pricing</li>
+          <li><span class="m">✓</span>Feedback during the testing phase</li>
+          <li><span class="m">✓</span>Rolling it out to your team once it is yours</li>
+        </ul>
+      </div>
+    </div>
+    <p>You get a defined deliverable on a defined path. When the build is signed off, it belongs to you.</p>
+  </div>
+</section>
+
+<!-- ===== PROOF ===== -->
+<section class="sec" id="proof">
+  <div class="inner">
+    <div class="prog"><span class="bar"></span>Proof · 08 / 10</div>
+    <h2>We have built this kind of tool before.</h2>
+    <p class="lead">White Phoenix is the team behind WeddingClickz. We have built booking and quoting tools for events businesses across the US, so custom tooling for service companies is well-worn ground for us.</p>
+
+    <div class="stats" style="margin-top:1.6rem">
+      <div class="stat"><div class="num">100+</div><div class="cap">Events businesses we have built for</div></div>
+      <div class="stat"><div class="num">5 min</div><div class="cap">To produce work that used to take an evening</div></div>
+      <div class="stat"><div class="num">1</div><div class="cap">Tool you own, with no subscription lock-in</div></div>
+      <div class="stat"><div class="num">100%</div><div class="cap">Built around your process, not a template</div></div>
+    </div>
+
+    <div class="case">
+      <div class="case-head">
+        <span class="case-ava">GQ</span>
+        <div class="who"><b>Custom quoting tool for an event business</b><span>Quoting workflow · built, proven on live events, handed over</span></div>
+      </div>
+      <div class="case-cols">
+        <div>
+          <h4>The problem</h4>
+          <ul>
+            <li>Quotes rebuilt from scratch in spreadsheets for every inquiry</li>
+            <li>Manual per-guest math, tax and gratuity, prone to costly errors</li>
+            <li>Slow turnaround losing deals to faster competitors</li>
+          </ul>
+        </div>
+        <div>
+          <h4>How we solved it</h4>
+          <ul>
+            <li>Modeled their catalog, packages and state tax rules into the tool</li>
+            <li>Automated totals, per-guest pricing, service charge and deposits</li>
+            <li>Branded, client-ready quotes generated in minutes, then handed over</li>
+          </ul>
+        </div>
+      </div>
+      <div class="case-stats">
+        <div class="cstat"><div class="n">Minutes</div><div class="l">To send a quote that took an evening</div></div>
+        <div class="cstat"><div class="n">First in</div><div class="l">Reaches the client's inbox ahead of rivals</div></div>
+        <div class="cstat"><div class="n">Owned</div><div class="l">Handed over for the business to run</div></div>
+      </div>
+    </div>
+
+    <div class="proofnote">
+      <b>To add before sending:</b> drop in real client logos, named case studies with verified metrics, video testimonials and screenshots here. Keep claims to numbers you can substantiate. The block above is a template you can duplicate per client.
+    </div>
+  </div>
+</section>
+
+<!-- ===== INVESTMENT ===== -->
+<section class="sec dark" id="investment">
+  <div class="inner">
+    <div class="prog"><span class="bar"></span>Investment · 09 / 10</div>
+    <h2>Pricing is scoped to your build, on a call.</h2>
+    <p class="lead">A tool shaped to your business is not a fixed-price template, so we quote it after a short scoping call once we understand the workflow. The investment is structured in three clear parts.</p>
+    <div class="inv-grid">
+      <div class="inv"><div class="ph">Part 01</div><h3>Discovery and build</h3><div class="price"><span>Scoped on call</span></div><p>A one-time build cost covering SOP mapping, architecture, the working tool, your branding and integrations.</p></div>
+      <div class="inv"><div class="ph">Part 02</div><h3>Handover and training</h3><div class="price"><span>Included</span></div><p>Testing on your live work, a walkthrough for your team, and full transfer of the tool and its ownership to you.</p></div>
+      <div class="inv"><div class="ph">Part 03</div><h3>Ongoing support</h3><div class="price"><span>Optional</span></div><p>Keep us on call for changes and enhancements as you grow, or run it entirely yourself. Your choice.</p></div>
+    </div>
+    <h3 style="margin-top:1.4rem;color:#fff">Why the investment makes sense</h3>
+    <ul class="flist">
+      <li>You buy an asset you own, not a subscription you rent forever.</li>
+      <li>The tool removes repetitive hours from your team, every week, for as long as you use it.</li>
+      <li>It gives you a workflow edge competitors on off-the-shelf software cannot match.</li>
+      <li>One scoped price, one clear deliverable, no open-ended retainer.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec" id="faq">
+  <div class="inner">
+    <div class="prog"><span class="bar"></span>FAQ · 10 / 10</div>
+    <h2>Clear answers, a clean finish.</h2>
+    <div style="max-width:760px">
+      <div class="faq"><button aria-expanded="false"><span>Is this just a website or a generic app?</span><span class="plus">+</span></button><div class="a"><p>No. It is a custom software tool built around one specific workflow in your business, modeled on your SOPs, pricing and branding, and handed over for you to own.</p></div></div>
+      <div class="faq"><button aria-expanded="false"><span>Do I own it, or am I renting?</span><span class="plus">+</span></button><div class="a"><p>You own it. Once the build is signed off, the tool and its access are transferred to you. There is no monthly lock-in.</p></div></div>
+      <div class="faq"><button aria-expanded="false"><span>How is this different from off-the-shelf software?</span><span class="plus">+</span></button><div class="a"><p>Off-the-shelf tools are generic, so they give no edge. We build around how you actually work, which means it fits your process and gives you something competitors cannot simply buy.</p></div></div>
+      <div class="faq"><button aria-expanded="false"><span>How long does a build take?</span><span class="plus">+</span></button><div class="a"><p>It depends on the workflow's complexity, which is exactly what the scoping call establishes. You will get a clear timeline alongside the quote.</p></div></div>
+      <div class="faq"><button aria-expanded="false"><span>What do you need from me?</span><span class="plus">+</span></button><div class="a"><p>Clarity on the workflow and rules, access to your current pricing and tools, and feedback during the testing phase. We handle the rest.</p></div></div>
+      <div class="faq"><button aria-expanded="false"><span>What happens after handover?</span><span class="plus">+</span></button><div class="a"><p>The tool is yours to run. You can keep us on call for changes and enhancements, or operate it entirely on your own.</p></div></div>
+      <div class="faq"><button aria-expanded="false"><span>Why is there no fixed price listed?</span><span class="plus">+</span></button><div class="a"><p>Because a tool built around your business is not a template. We quote it after a short scoping call so the price reflects the actual build, not a guess.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="sec dark contact" id="contact" style="border-bottom:none">
+  <div class="inner">
+    <div class="prog"><span class="bar"></span>Next step</div>
+    <h2>Book a scoping call and we will quote your build.</h2>
+    <p class="lead">Tell us about the workflow you want to put on rails. We will map it, scope it and show you exactly what your custom tool would do, before you commit to anything.</p>
+    <div class="contact-cta">
+      <a href="https://whitephoenixconsulting.com/#contact" class="btn btn-flame">Book a scoping call</a>
+      <a href="mailto:aditya@edastra.in?subject=White%20Phoenix%20custom%20tool%20proposal" class="btn btn-ghost">Email us</a>
+    </div>
+    <div class="cdetails">
+      <div class="row"><div class="k">Prepared by</div><div class="v">White Phoenix</div></div>
+      <div class="row"><div class="k">Website</div><div class="v">whitephoenixconsulting.com</div></div>
+      <div class="row"><div class="k">Focus</div><div class="v">Custom tools for service businesses</div></div>
+      <div class="row"><div class="k">Team behind</div><div class="v">WeddingClickz</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 White Phoenix. We build software tools customized for your business, shaped around your SOPs and the way you actually work.</footer>
+
+<script>
+document.querySelectorAll('.faq').forEach(function(faq){
+  var b=faq.querySelector('button'),a=faq.querySelector('.a');
+  b.addEventListener('click',function(){
+    document.querySelectorAll('.faq.open').forEach(function(o){if(o!==faq){o.classList.remove('open');o.querySelector('.a').style.maxHeight=null;o.querySelector('button').setAttribute('aria-expanded','false');}});
+    var open=faq.classList.toggle('open');
+    a.style.maxHeight=open?a.scrollHeight+'px':null;
+    b.setAttribute('aria-expanded',open);
+  });
+});
+</script>
+</body>
+</html>
