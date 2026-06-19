@@ -1,10 +1,10 @@
 {
   "slug": "event-planners",
-  "brand": "GetQuote",
+  "brand": "White Phoenix",
   "domain": "https://whitephoenixconsulting.com",
   "meta": {
-    "title": "GetQuote, build client-ready event quotes in minutes, not hours",
-    "description": "GetQuote is the fast, focused quote builder for US event planners. Assemble itemized, on-brand quotes with per-guest pricing, sales tax and gratuity calculated automatically. Send before your competitor replies.",
+    "title": "White Phoenix, custom quote tools for event businesses",
+    "description": "We build a custom quote tool for your event business, built around your services, pricing and state tax rules, so you send a polished quote in minutes. You own it. Book a free demo.",
     "og_image": "https://whitephoenixconsulting.com/og-image.png"
   },
   "form": {
@@ -22,16 +22,16 @@
     "cta": "Get a Demo"
   },
   "hero": {
-    "eyebrow": "Built for US event planners & managers",
-    "headline": "Build client-ready event quotes in",
-    "headline_accent": "minutes, not hours.",
-    "sub": "GetQuote lets event managers assemble itemized, on-brand quotes across venue, catering, AV, staffing, rentals and more, with per-guest pricing, sales tax and gratuity calculated automatically. Send a professional quote before your competitor even replies.",
-    "cta_primary": "Get a Demo",
+    "eyebrow": "For event planners & venues sending 5+ quotes a month",
+    "headline": "We build a custom quote tool for",
+    "headline_accent": "your event business.",
+    "sub": "One that already knows your services, your pricing, and your state's tax and gratuity rules, so you send a polished, itemized quote in minutes and land in the client's inbox first. We build it around how you already work, then hand it over. You own it.",
+    "cta_primary": "Get a free demo built for your business",
     "cta_secondary": "See how it works",
     "micro": [
-      "No credit card to try",
-      "Set up in minutes",
-      "Built for US tax & gratuity"
+      "Free working demo",
+      "Built around your business",
+      "Yours to run when it's done"
     ]
   },
   "trust": {

@@ -186,6 +186,7 @@ header.scrolled{background:rgba(251,250,248,.94);box-shadow:0 8px 30px -16px rgb
 /* Demo */
 .demo .frame{max-width:1080px;margin:0 auto}
 .demo .caption{text-align:center;font-size:.9rem;color:var(--ash);margin-top:1.4rem}
+.shot-cap{text-align:center;font-size:.85rem;color:var(--ash);max-width:620px;margin:1.1rem auto 0}
 /* FAQ */
 .faq-list{max-width:760px;margin:0 auto}
 .faq{border-bottom:1px solid var(--line)}
@@ -509,6 +510,7 @@ def render(cfg, demo_html):
       <div class="hero-micro">{micro}</div>
     </div>
     <div class="hero-shot">{demo_html}</div>
+    <p class="shot-cap">Example of a tool we built. Yours is customized to your services, pricing and brand.</p>
   </div>
 </section>
 
@@ -580,6 +582,7 @@ def render(cfg, demo_html):
       <p>{esc(cfg["demo"]["sub"])}</p>
     </div>
     <div class="frame reveal">{demo_html}</div>
+    <p class="shot-cap">Example of a tool we built. Yours is customized to your services, pricing and brand.</p>
     <p class="caption">{esc(cfg["demo"]["caption"])}</p>
   </div>
 </section>
