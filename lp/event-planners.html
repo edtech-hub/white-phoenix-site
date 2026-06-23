@@ -491,7 +491,27 @@
     .close-body p:last-child { margin-bottom: 0; }
     .close-body strong { color: var(--ink); font-weight: 600; }
     .close-cta { margin-top: 48px; }
-    .close-cta-note { margin-top: 16px; font-size: 13.5px; color: var(--ink-muted); line-height: 1.55; }
+    .close-cta-note { margin-top: 20px; font-size: 13.5px; color: var(--ink-muted); line-height: 1.55; }
+
+    /* BOOKING FORM */
+    .book-form { max-width: 560px; display: grid; gap: 16px; }
+    .bf-hp { position: absolute; left: -9999px; opacity: 0; }
+    .bf-row { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 520px) { .bf-row { grid-template-columns: 1fr; } }
+    .bf-field label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 7px; }
+    .bf-field input, .bf-field textarea {
+      width: 100%; font-family: var(--f-body); font-size: 15px; color: var(--ink);
+      background: var(--white); border: 1px solid var(--rule); border-radius: 5px;
+      padding: 12px 14px; transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+    .bf-field input::placeholder, .bf-field textarea::placeholder { color: var(--ink-muted); }
+    .bf-field input:focus, .bf-field textarea:focus { outline: none; border-color: var(--fire); box-shadow: 0 0 0 3px rgba(212,86,10,0.12); }
+    .bf-field textarea { resize: vertical; min-height: 92px; line-height: 1.55; }
+    .book-form .btn { justify-self: start; }
+    .book-form .btn[disabled] { opacity: 0.6; cursor: default; }
+    .bf-status { font-size: 13.5px; line-height: 1.5; margin: 0; min-height: 1px; }
+    .bf-status.ok { color: var(--fire); font-weight: 600; }
+    .bf-status.err { color: var(--pain); font-weight: 600; }
     .close-signoff { margin-top: 56px; padding-top: 34px; border-top: 1px solid var(--rule); }
     .signoff-name { font-family: var(--f-display); font-weight: 700; font-size: 18px; color: var(--ink); letter-spacing: -0.01em; }
     .signoff-role { font-size: 13.5px; color: var(--ink-muted); margin-top: 4px; }
@@ -1186,10 +1206,23 @@
         </p>
       </div>
       <div class="close-cta rv">
-        <!-- PLACEHOLDER: [ADD CALENDAR LINK], replace href="#book" with your Calendly or Cal.com link -->
-        <a href="#book" class="btn btn-lg">
-          Book My Call <span class="arr">→</span>
-        </a>
+        <form class="book-form" id="bookForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="70240df0-a44c-4640-a02e-8e5d4bb5a3f9">
+          <input type="hidden" name="subject" value="New call booking (Event Agencies quote-engine page)">
+          <input type="hidden" name="from_name" value="White Phoenix - Event Agencies LP">
+          <input type="checkbox" name="botcheck" class="bf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="bf-row">
+            <div class="bf-field"><label for="bf-name">Your name</label><input id="bf-name" name="name" required placeholder="Jordan Smith"></div>
+            <div class="bf-field"><label for="bf-agency">Agency</label><input id="bf-agency" name="agency" placeholder="Smith Events Co."></div>
+          </div>
+          <div class="bf-row">
+            <div class="bf-field"><label for="bf-email">Work email</label><input id="bf-email" name="email" type="email" required placeholder="you@agency.com"></div>
+            <div class="bf-field"><label for="bf-phone">Phone (optional)</label><input id="bf-phone" name="phone" type="tel" placeholder="Best number to reach you"></div>
+          </div>
+          <div class="bf-field"><label for="bf-msg">What do you quote most? (optional)</label><textarea id="bf-msg" name="message" placeholder="Event types, rough quote volume, current turnaround"></textarea></div>
+          <button type="submit" class="btn btn-lg">Book My Call <span class="arr">→</span></button>
+          <p class="bf-status" id="bookStatus" role="status" aria-live="polite"></p>
+        </form>
         <p class="close-cta-note">
           Builds are limited to a small number per month, every engine gets our full attention.<br>
           If you're reading this, we still have capacity. That changes.
@@ -1306,6 +1339,35 @@
       }, { threshold: 0.25 });
       demoIO.observe(demoWrap);
     }
+
+    // BOOKING FORM (Web3Forms)
+    (function () {
+      var f = document.getElementById('bookForm');
+      if (!f) return;
+      var st = document.getElementById('bookStatus');
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = f.querySelector('button[type=submit]');
+        var orig = btn.innerHTML;
+        btn.disabled = true; btn.textContent = 'Sending...';
+        st.className = 'bf-status';
+        st.textContent = '';
+        fetch(f.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(f) })
+          .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+          .then(function (res) {
+            if (res.ok && res.d.success) {
+              f.reset();
+              st.className = 'bf-status ok';
+              st.textContent = "Thanks. Your request is in, we'll reply within one business day.";
+            } else { throw new Error((res.d && res.d.message) || 'failed'); }
+          })
+          .catch(function () {
+            st.className = 'bf-status err';
+            st.textContent = 'Something went wrong. Please email us directly.';
+          })
+          .finally(function () { btn.disabled = false; btn.innerHTML = orig; });
+      });
+    })();
   </script>
 
 </body>
