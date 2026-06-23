@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heston Photo Lifestyle Case Study, Commercial Photography Studio Website | White Phoenix</title>
+<meta name="description" content="How White Phoenix built Heston Photo Lifestyle a clean, fast portfolio website that brings six commercial photography service lines under one brand and turns browsers into briefs.">
+<link rel="canonical" href="https://whitephoenixconsulting.com/case-study-heston.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="White Phoenix">
+<meta name="theme-color" content="#0E1014">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="White Phoenix">
+<meta property="og:url" content="https://whitephoenixconsulting.com/case-study-heston.html">
+<meta property="og:title" content="Heston Photo Lifestyle Case Study, Commercial Photography Studio Website | White Phoenix">
+<meta property="og:description" content="How White Phoenix built Heston Photo Lifestyle a clean, fast portfolio website that brings six commercial photography service lines under one brand and turns browsers into briefs.">
+<meta property="og:image" content="https://whitephoenixconsulting.com/assets/hestonphoto-home.png">
+<meta property="og:image:width" content="1440">
+<meta property="og:image:height" content="900">
+<meta property="og:image:alt" content="Heston Photo Lifestyle, commercial photography studio website">
+<meta property="og:locale" content="en_US">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Heston Photo Lifestyle Case Study, Commercial Photography Studio Website | White Phoenix">
+<meta name="twitter:description" content="How White Phoenix built Heston Photo Lifestyle a clean, fast portfolio website that brings six commercial photography service lines under one brand and turns browsers into briefs.">
+<meta name="twitter:image" content="https://whitephoenixconsulting.com/assets/hestonphoto-home.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --porcelain:#FBFAF8;
+  --paper:#FFFFFF;
+  --ink:#16181D;
+  --ink-soft:#3A3E47;
+  --ash:#7C818B;
+  --line:#E8E6E1;
+  --flame:#FF5C1A;
+  --flame-deep:#E8430A;
+  --ember:#FFB42E;
+  --night:#0E1014;
+  --night-soft:#171A20;
+  --night-line:rgba(255,255,255,.09);
+  --grad:linear-gradient(92deg,#FF5C1A 0%,#FFB42E 100%);
+  --display:'Clash Display',sans-serif;
+  --body:'Inter',sans-serif;
+  --radius:18px;
+  --shadow:0 18px 50px -22px rgba(22,24,29,.22);
+  --maxw:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--porcelain);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3,.display{font-family:var(--display);font-weight:600;line-height:1.12;letter-spacing:-.015em}
+h1{font-size:clamp(1.7rem,2.8vw,2.5rem)}
+h2{font-size:clamp(1.6rem,2.8vw,2.1rem)}
+h3{font-size:1.18rem;line-height:1.3}
+p{color:var(--ink-soft)}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--flame-deep);margin-bottom:.9rem}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--grad);border-radius:2px}
+
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:var(--body);font-weight:600;font-size:.98rem;padding:.95rem 1.7rem;border-radius:99px;border:1px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;white-space:nowrap}
+.btn-flame{background:var(--grad);color:#fff;box-shadow:0 12px 28px -12px rgba(232,67,10,.55)}
+.btn-flame:hover{transform:translateY(-2px);box-shadow:0 16px 34px -12px rgba(232,67,10,.65)}
+.btn-night{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+.btn-night:hover{border-color:#fff;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:#CFCBC3}
+.btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-flame-outline{background:transparent;color:var(--flame-deep);border-color:var(--flame)}
+.btn-flame-outline:hover{background:rgba(255,92,26,.08);transform:translateY(-2px)}
+.btn-flame-outline svg{width:18px;height:18px;stroke:currentColor;fill:none}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:6px}
+
+/* ===== Nav ===== */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .25s ease,box-shadow .25s ease;background:rgba(251,250,248,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header.scrolled{background:rgba(251,250,248,.92);box-shadow:0 8px 30px -16px rgba(22,24,29,.18)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:var(--display);font-weight:600;font-size:1.18rem;letter-spacing:-.01em}
+.logo svg{width:30px;height:30px}
+.nav-links{display:flex;align-items:center;gap:2rem;font-size:.93rem;font-weight:500;color:var(--ink-soft)}
+.nav-links a{position:relative;padding:.3rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--grad);border-radius:2px;transition:width .25s ease}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--ink)}
+.nav .btn{padding:.65rem 1.3rem;font-size:.9rem}
+.menu-btn{display:none;background:none;border:none;cursor:pointer;padding:.4rem}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px;transition:.3s}
+@media(max-width:920px){
+  .nav-links{position:fixed;inset:74px 0 auto 0;background:var(--porcelain);flex-direction:column;align-items:flex-start;gap:0;padding:0 24px;max-height:0;overflow:hidden;transition:max-height .35s ease;border-bottom:1px solid var(--line)}
+  .nav-links.open{max-height:460px;padding:12px 24px 24px}
+  .nav-links a{padding:.85rem 0;width:100%;border-bottom:1px solid var(--line)}
+  .nav-links a:last-of-type{border:none}
+  .menu-btn{display:block}
+  .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-btn.open span:nth-child(2){opacity:0}
+  .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-cta-desktop{display:none}
+}
+
+section{padding:84px 0}
+@media(max-width:760px){section{padding:60px 0}}
+.media-fallback{display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);font-family:var(--display);font-weight:600;letter-spacing:.04em;text-align:center;padding:1rem}
+
+/* ===== Hero (text left + quick facts, media right) ===== */
+.cs-hero{position:relative;padding:124px 0 0;overflow:hidden}
+.cs-hero .hero-glow{position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:880px;height:520px;background:radial-gradient(closest-side,rgba(255,140,60,.14),transparent 72%);pointer-events:none}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;color:var(--ink-soft);margin-bottom:1.8rem;transition:color .2s}
+.back-link:hover{color:var(--flame-deep)}
+.back-link svg{width:16px;height:16px;stroke:currentColor}
+.cs-hero-grid{display:grid;grid-template-columns:0.92fr 1.08fr;gap:3.2rem;align-items:center}
+.cs-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}
+.cs-tag{font-size:.7rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--flame-deep);background:rgba(255,92,26,.07);border:1px solid rgba(255,92,26,.16);border-radius:99px;padding:.3rem .75rem}
+.cs-hero h1{margin-bottom:1rem}
+.cs-hero .deck{font-size:1rem;max-width:520px;margin-bottom:1.8rem}
+.cs-facts{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem 2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.cs-facts .label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);margin-bottom:.3rem}
+.cs-facts .val{font-weight:600;color:var(--ink);font-size:.92rem}
+.cs-cover{position:relative;width:100%;aspect-ratio:189/100;border-radius:calc(var(--radius) + 6px);overflow:hidden;background:linear-gradient(135deg,#1A130D,#0E1014 70%);box-shadow:var(--shadow)}
+.cs-cover img,.cs-cover video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+.cs-cover .media-fallback{position:absolute;inset:0;z-index:1}
+@media(max-width:880px){.cs-hero-grid{grid-template-columns:1fr;gap:2.2rem}.cs-cover{order:-1}}
+
+/* ===== Section heading ===== */
+.sec-head{max-width:720px;margin-bottom:2.4rem}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.sec-head.center .eyebrow{justify-content:center}
+.sec-head.center .eyebrow::before{display:none}
+.sec-head h2{margin-bottom:.8rem}
+.sec-head p{font-size:1.02rem}
+
+/* ===== Hero CTA ===== */
+.cs-hero-cta{margin-top:1.8rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+
+/* ===== Project at a glance ===== */
+.glance{background:var(--porcelain)}
+.glance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.glance-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem 1.6rem;display:flex;gap:1.1rem;align-items:flex-start;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.glance-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#DDD9D1}
+.glance-ico{flex:none;width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,rgba(255,92,26,.1),rgba(255,180,46,.1));border:1px solid rgba(255,92,26,.16);display:flex;align-items:center;justify-content:center}
+.glance-ico svg{width:21px;height:21px;stroke:var(--flame-deep);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.glance-card .label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ash);margin-bottom:.32rem}
+.glance-card .val{font-weight:600;color:var(--ink);font-size:1rem;line-height:1.35}
+.glance-card--accent{background:linear-gradient(135deg,#fff,#FFF7EF);border-color:rgba(255,92,26,.22)}
+.glance-card--accent .glance-ico{background:var(--grad);border-color:transparent}
+.glance-card--accent .glance-ico svg{stroke:#fff}
+.glance-card--accent .val{color:var(--flame-deep)}
+@media(max-width:860px){.glance-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.glance-grid{grid-template-columns:1fr}}
+
+/* ===== UI snapshots carousel ===== */
+.gallery{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.carousel{position:relative}
+.carousel-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:.3rem;scrollbar-width:none}
+.carousel-track::-webkit-scrollbar{display:none}
+.shot{flex:0 0 100%;scroll-snap-align:center;position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,#1A130D,#0E1014 70%);cursor:zoom-in}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:2;transition:transform .4s ease}
+.shot:hover img{transform:scale(1.02)}
+.shot .media-fallback{position:absolute;inset:0;z-index:1;pointer-events:none}
+.car-dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.4rem}
+.car-dot{width:9px;height:9px;border-radius:50%;border:none;background:var(--line);cursor:pointer;padding:0;transition:background .2s ease,transform .2s ease}
+.car-dot.active{background:var(--grad);transform:scale(1.25)}
+@media(max-width:560px){.shot{aspect-ratio:4/3}}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.94);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow);transition:transform .2s ease,opacity .2s ease}
+.car-btn:hover{transform:translateY(-50%) scale(1.08)}
+.car-btn svg{width:20px;height:20px;stroke:var(--ink);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.car-btn.prev{left:-12px}
+.car-btn.next{right:-12px}
+.car-btn[disabled]{opacity:0;pointer-events:none}
+@media(max-width:560px){.car-btn{display:none}}
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(8,9,12,.93);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:4vw;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox img{max-width:100%;max-height:86vh;border-radius:12px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);object-fit:contain}
+.lb-close{position:absolute;top:20px;right:24px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease}
+.lb-close:hover{background:rgba(255,255,255,.18)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease}
+.lb-nav:hover{background:rgba(255,255,255,.18)}
+.lb-nav svg{width:24px;height:24px;stroke:#fff;stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lb-nav.prev{left:16px}
+.lb-nav.next{right:16px}
+.lb-caption{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:rgba(255,255,255,.72);font-size:.9rem;padding:0 1rem}
+@media(max-width:560px){.lb-nav{width:42px;height:42px}}
+
+/* ===== About the client ===== */
+.about-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:3rem;align-items:center}
+.about-photo{position:relative;aspect-ratio:4/3;border-radius:calc(var(--radius) + 4px);overflow:hidden;border:1px solid var(--line);background:linear-gradient(135deg,#1A130D,#0E1014 70%)}
+.about-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:2}
+.about-photo .media-fallback{position:absolute;inset:0;z-index:1}
+.about-text p{font-size:1.05rem;margin-bottom:1rem}
+.about-text p:last-child{margin-bottom:0}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* ===== Challenge / Solution split ===== */
+.split{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.split-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;align-items:stretch}
+.split-col{border-radius:var(--radius);padding:2.3rem 2.2rem}
+.split-col .eyebrow{margin-bottom:.7rem}
+.split-col h2{font-size:1.4rem;margin-bottom:.9rem}
+.split-col p{font-size:1rem;margin-bottom:1.3rem}
+.split-col.challenge{background:var(--porcelain);border:1px solid var(--line)}
+.split-col.solution{background:var(--night);color:#fff;box-shadow:0 28px 60px -28px rgba(14,16,20,.5)}
+.split-col.solution .eyebrow{color:var(--ember)}
+.split-col.solution h2{color:#fff}
+.split-col.solution p{color:rgba(255,255,255,.72)}
+.split-col.solution .cs-list li{color:rgba(255,255,255,.88);border-bottom:1px solid var(--night-line)}
+.cs-list{list-style:none}
+.cs-list li{display:flex;gap:.8rem;align-items:flex-start;padding:.55rem 0;font-size:1rem;color:var(--ink-soft);border-bottom:1px solid var(--line)}
+.cs-list li:last-child{border-bottom:none}
+.cs-list.problems li .mark{flex:none;width:22px;height:22px;border-radius:50%;background:#F2EEE8;color:#B45309;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;margin-top:.12rem}
+.cs-list.solutions li .mark{flex:none;width:22px;height:22px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;margin-top:.12rem}
+@media(max-width:820px){.split-grid{grid-template-columns:1fr;gap:2.4rem}}
+
+/* ===== Process ===== */
+.proc-list{max-width:900px;margin:0 auto}
+.step{display:grid;grid-template-columns:80px 1fr;gap:1.8rem;padding:1.7rem 0;border-bottom:1px solid var(--line);align-items:start}
+.step:last-child{border:none}
+.step .no{font-family:var(--display);font-weight:600;font-size:1.7rem;color:#D9D5CD;line-height:1}
+.step.in-view .no{color:var(--flame-deep)}
+.step h3{margin-bottom:.4rem}
+.step p{font-size:.98rem}
+@media(max-width:600px){.step{grid-template-columns:1fr;gap:.5rem}}
+
+/* ===== Results ===== */
+.results{background:var(--night);color:#fff}
+.results .sec-head h2{color:#fff}
+.results .sec-head p{color:rgba(255,255,255,.62)}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;margin-bottom:2.6rem}
+.result{border-left:1px solid var(--night-line);padding-left:1.4rem}
+.result .num{font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.result .cap{margin-top:.45rem;font-size:.88rem;color:rgba(255,255,255,.6)}
+.results .cs-list li{color:rgba(255,255,255,.82);border-bottom:1px solid var(--night-line)}
+.results .cs-list{max-width:820px}
+.results .cs-list li .mark{background:var(--grad)}
+@media(max-width:860px){.results-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ===== Testimonial ===== */
+.cs-quote{background:var(--paper);border-bottom:1px solid var(--line)}
+.cs-quote .inner{max-width:860px;margin:0 auto;text-align:center}
+.cs-quote .stars{color:var(--ember);letter-spacing:.2em;margin-bottom:1.2rem}
+.cs-quote blockquote{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,2.4vw,1.9rem);line-height:1.42;letter-spacing:-.01em;color:var(--ink);margin-bottom:1.6rem}
+.cs-quote .who{display:flex;align-items:center;justify-content:center;gap:.85rem}
+.cs-quote .avatar{width:48px;height:48px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;overflow:hidden}
+.cs-quote .avatar img{width:100%;height:100%;object-fit:cover}
+.cs-quote .who strong{display:block;font-size:.96rem}
+.cs-quote .who span{font-size:.84rem;color:var(--ash)}
+
+/* ===== Tech stack ===== */
+.tech{background:var(--porcelain)}
+.tech-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.tech-item{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem 1.6rem;display:flex;align-items:center;gap:1rem;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.tech-item:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#DDD9D1}
+.tech-item img,.tech-item .tech-svg{width:34px;height:34px;object-fit:contain;flex:none}
+.tech-item .t-cat{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ash);margin-bottom:.2rem}
+.tech-item .t-name{font-weight:600;color:var(--ink);font-size:1rem}
+@media(max-width:760px){.tech-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.tech-grid{grid-template-columns:1fr}}
+
+/* ===== Why us ===== */
+.why{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.why-card{display:flex;gap:1rem;align-items:flex-start;padding:1.6rem 0}
+.why-card .ico{flex:none;width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,rgba(255,92,26,.1),rgba(255,180,46,.1));border:1px solid rgba(255,92,26,.16);display:flex;align-items:center;justify-content:center}
+.why-card .ico svg{width:20px;height:20px;stroke:var(--flame-deep)}
+.why-card h3{font-size:1.08rem;margin-bottom:.35rem}
+.why-card p{font-size:.95rem}
+@media(max-width:760px){.why-grid{grid-template-columns:1fr}}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:760px;margin:0 auto}
+.faq{border-bottom:1px solid var(--line)}
+.faq button{width:100%;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.4rem 0;font-family:var(--body);font-size:1.02rem;font-weight:600;color:var(--ink);text-align:left}
+.faq button .plus{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid #CFCBC3;display:flex;align-items:center;justify-content:center;font-weight:500;color:var(--ash);transition:transform .3s,background .3s,color .3s,border-color .3s}
+.faq.open button .plus{transform:rotate(45deg);background:var(--grad);color:#fff;border-color:transparent}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq .ans p{padding:0 2.4rem 1.4rem 0;font-size:.96rem}
+
+/* ===== CTA ===== */
+.cta-final{background:var(--night);color:#fff;position:relative;overflow:hidden;text-align:center}
+.cta-final::before{content:"";position:absolute;bottom:-220px;left:50%;transform:translateX(-50%);width:900px;height:520px;background:radial-gradient(closest-side,rgba(255,110,30,.18),transparent 72%);pointer-events:none}
+.cta-final .inner{position:relative;max-width:620px;margin:0 auto}
+.cta-final h2{color:#fff;margin-bottom:1.1rem}
+.cta-final p{color:rgba(255,255,255,.66);margin-bottom:2rem}
+.cta-final .ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cta-final .eyebrow{justify-content:center;color:var(--ember)}
+.cta-final .eyebrow::before{display:none}
+
+/* ===== Footer ===== */
+footer{background:#0A0C0F;color:rgba(255,255,255,.6);padding:70px 0 36px;font-size:.92rem}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:3rem;margin-bottom:3.2rem}
+.foot-brand .logo{color:#fff;margin-bottom:1rem}
+.foot-brand p{color:rgba(255,255,255,.5);max-width:300px;font-size:.9rem}
+footer h4{color:#fff;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.1rem;font-weight:600}
+footer ul{list-style:none}
+footer li{margin-bottom:.65rem}
+footer a:hover{color:#fff}
+.foot-bottom{border-top:1px solid var(--night-line);padding-top:1.8rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem;color:rgba(255,255,255,.4)}
+@media(max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+
+/* ===== Reveal ===== */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in-view{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Heston Photo Lifestyle: one cohesive site for a six-service photography studio",
+  "description": "How White Phoenix built Heston Photo Lifestyle a clean, fast portfolio website that brings six commercial photography service lines under one brand and turns browsers into briefs.",
+  "image": "https://whitephoenixconsulting.com/assets/hestonphoto-home.png",
+  "datePublished": "2026-06-24",
+  "author": { "@type": "Organization", "name": "White Phoenix", "url": "https://whitephoenixconsulting.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "White Phoenix",
+    "logo": { "@type": "ImageObject", "url": "https://whitephoenixconsulting.com/og-image.png" }
+  },
+  "mainEntityOfPage": "https://whitephoenixconsulting.com/case-study-heston.html",
+  "about": { "@type": "Organization", "name": "Heston Photo Lifestyle", "url": "https://lifestyle.hestonphoto.co.uk/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://whitephoenixconsulting.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Our Work", "item": "https://whitephoenixconsulting.com/portfolio.html" },
+    { "@type": "ListItem", "position": 3, "name": "Heston Photo Lifestyle", "item": "https://whitephoenixconsulting.com/case-study-heston.html" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="index.html#top" class="logo" aria-label="White Phoenix home">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 2C16 2 8 9 8 17a8 8 0 0 0 16 0c0-3-1.4-5.4-3-7.4.4 2 .2 4-1.4 5.4.6-3.4-1-7.6-3.6-13Z" fill="url(#fg)"/>
+        <path d="M16 30c-3 0-5.4-1.4-6.9-3.5C10.6 27.4 13 28 16 28s5.4-.6 6.9-1.5C21.4 28.6 19 30 16 30Z" fill="#16181D"/>
+        <defs><linearGradient id="fg" x1="8" y1="2" x2="24" y2="25"><stop stop-color="#FF5C1A"/><stop offset="1" stop-color="#FFB42E"/></linearGradient></defs>
+      </svg>
+      White Phoenix
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="portfolio.html" class="active">Our Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#why-us">Why Us</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#faq">FAQ</a>
+    </nav>
+    <a href="index.html#contact" class="btn btn-flame nav-cta-desktop">Book a Call</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ 1. HERO ============ -->
+<section class="cs-hero">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <a href="portfolio.html" class="back-link reveal in-view">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      All work
+    </a>
+    <div class="cs-hero-grid">
+      <div class="reveal in-view">
+        <div class="cs-tags">
+          <span class="cs-tag">Website</span>
+          <span class="cs-tag">Photography Studio</span>
+        </div>
+        <h1>Heston Photo Lifestyle: one cohesive site for a six-service studio</h1>
+        <p class="deck">Heston Photo is a London commercial photography studio doing genuinely good work across very different briefs, from corporate headshots to property. They needed a website that matched the quality of the photography and pulled six service lines into one confident brand. We built a clean, fast portfolio site that does exactly that, and channels enquiries straight into the studio.</p>
+        <div class="cs-hero-cta">
+          <a href="https://lifestyle.hestonphoto.co.uk/" target="_blank" rel="noopener" class="btn btn-flame-outline">View Live Site
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="cs-cover reveal in-view">
+        <img src="assets/hestonphoto-home.png" alt="Heston Photo Lifestyle homepage, Corporate and Commercial Photography in London" onerror="this.style.display='none'">
+        <div class="media-fallback">Heston Photo Lifestyle</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1.5 PROJECT AT A GLANCE ============ -->
+<section class="glance">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Overview</span>
+      <h2>Project at a glance</h2>
+    </div>
+    <div class="glance-grid reveal">
+      <div class="glance-card">
+        <div class="glance-ico"><svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <div><div class="label">Industry</div><div class="val">Commercial &amp; Corporate Photography</div></div>
+      </div>
+      <div class="glance-card">
+        <div class="glance-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><div class="label">Target market</div><div class="val">Businesses &amp; brands · London</div></div>
+      </div>
+      <div class="glance-card">
+        <div class="glance-ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div><div class="label">Project</div><div class="val">Marketing website, multi-service portfolio</div></div>
+      </div>
+      <div class="glance-card">
+        <div class="glance-ico"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div><div class="label">Services</div><div class="val">Web design, Front-end development, SEO</div></div>
+      </div>
+      <div class="glance-card">
+        <div class="glance-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <div><div class="label">Scope</div><div class="val">Homepage plus six service pages</div></div>
+      </div>
+      <div class="glance-card glance-card--accent">
+        <div class="glance-ico"><svg viewBox="0 0 24 24"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg></div>
+        <div><div class="label">Key outcome</div><div class="val">Six service lines, one brand</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. UI SNAPSHOTS ============ -->
+<section class="gallery">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Interface Snapshots</span>
+      <h2>A look at the site</h2>
+    </div>
+    <div class="carousel reveal">
+      <button class="car-btn prev" id="carPrev" aria-label="Previous snapshot"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <div class="carousel-track" id="carTrack">
+        <div class="shot"><img src="assets/hestonphoto-home.png" alt="Homepage, Corporate and Commercial Photography in London" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Homepage</div></div>
+        <div class="shot"><img src="assets/hestonphoto-headshots.png" alt="Headshots service page, bespoke corporate headshots in London" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Headshots</div></div>
+        <div class="shot"><img src="assets/hestonphoto-events.png" alt="Events photography service page" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Events</div></div>
+        <div class="shot"><img src="assets/hestonphoto-family.png" alt="Family photography service page" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Family</div></div>
+        <div class="shot"><img src="assets/hestonphoto-sport.png" alt="Sport photography service page" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Sport</div></div>
+        <div class="shot"><img src="assets/hestonphoto-schools.png" alt="Schools photography service page" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Schools</div></div>
+        <div class="shot"><img src="assets/hestonphoto-property.png" alt="Property photography service page" loading="lazy" onerror="this.style.display='none'"><div class="media-fallback">Property</div></div>
+      </div>
+      <button class="car-btn next" id="carNext" aria-label="Next snapshot"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+    <div class="car-dots" id="carDots" role="tablist" aria-label="Snapshot navigation"></div>
+  </div>
+</section>
+
+<!-- Lightbox for snapshot carousel -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-nav prev" id="lbPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav next" id="lbNext" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<!-- ============ 3. ABOUT THE CLIENT ============ -->
+<section>
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <img src="assets/hestonphoto-headshots.png" alt="Heston Photo Lifestyle headshot photography" loading="lazy" onerror="this.style.display='none'">
+        <div class="media-fallback">Heston Photo Lifestyle</div>
+      </div>
+      <div class="about-text reveal">
+        <span class="eyebrow">About the client</span>
+        <h2>Heston Photo Lifestyle</h2>
+        <p>Heston Photo is a creative team of corporate and commercial photographers based in London, with more than fifteen years of combined experience and over five hundred briefs delivered. Their promise is a considered, on-brief approach: imagery crafted to do a specific job for a specific audience.</p>
+        <p>The catch was range. Headshots, family, sport, schools, events and property are six different audiences with six different expectations, and the studio needed a single site that could speak to all of them without feeling like six different businesses bolted together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. THE CHALLENGE + 5. THE SOLUTION ============ -->
+<section class="split">
+  <div class="wrap">
+    <div class="split-grid">
+
+      <div class="split-col challenge reveal">
+        <span class="eyebrow">The Challenge</span>
+        <h2>What was holding them back</h2>
+        <p>A commercial photographer is judged on their imagery before a word is read. A dated or cluttered site quietly undercuts the work and makes a premium studio look ordinary. Heston needed the opposite: a site that felt as considered as the photography, while making six distinct service lines easy to find and easy to enquire about.</p>
+        <ul class="cs-list problems">
+          <li><span class="mark">!</span>Six very different audiences, from executives to schools, all landing in one place</li>
+          <li><span class="mark">!</span>The photography is the product, so the design had to get out of its way, not compete with it</li>
+          <li><span class="mark">!</span>Visitors needed to grasp the breadth of services without the site feeling scattered</li>
+          <li><span class="mark">!</span>Enquiries had to be simple to start, or interest quietly slips away</li>
+          <li><span class="mark">!</span>It all had to load fast and look right on a phone, where most people first arrive</li>
+        </ul>
+      </div>
+
+      <div class="split-col solution reveal">
+        <span class="eyebrow">Our Solution</span>
+        <h2>How we solved it</h2>
+        <p>We built a calm, image-led site with a clear spine: one strong homepage that frames the studio, then a dedicated page per service so each audience sees work that looks like theirs. The studio's own "considered, on-brief" story runs through it, and a quote request flow turns interest into a brief.</p>
+        <ul class="cs-list solutions">
+          <li><span class="mark">✓</span>A homepage that leads with the work and sets out all six specialisms at a glance</li>
+          <li><span class="mark">✓</span>Six dedicated service pages, each with its own galleries and "what's included"</li>
+          <li><span class="mark">✓</span>A "how we work" narrative, from brief to crafted edit to fast delivery, that builds trust</li>
+          <li><span class="mark">✓</span>A quote request form that funnels enquiries straight to the studio</li>
+          <li><span class="mark">✓</span>A fast, fully responsive build with a private client portal link for gallery delivery</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. OUR PROCESS ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Our Process</span>
+      <h2>How we delivered it</h2>
+    </div>
+    <div class="proc-list">
+      <div class="step reveal"><div class="no">01</div><div><h3>Discovery &amp; Brand</h3><p>We mapped the six service lines, who each one is for, and the look the studio wanted to own: premium, calm, and unmistakably theirs.</p></div></div>
+      <div class="step reveal"><div class="no">02</div><div><h3>Information Architecture</h3><p>We structured the site around one homepage and a page per specialism, so the breadth is obvious but every audience still has a focused home.</p></div></div>
+      <div class="step reveal"><div class="no">03</div><div><h3>Design</h3><p>We designed an image-first layout that lets the photography carry the page, with restrained type and plenty of space so nothing fights the work.</p></div></div>
+      <div class="step reveal"><div class="no">04</div><div><h3>Development</h3><p>We built it as a fast, fully responsive site, with optimised galleries, the quote request flow, and a link through to the private client portal.</p></div></div>
+      <div class="step reveal"><div class="no">05</div><div><h3>Content &amp; SEO</h3><p>Each service page was written and structured to rank for its own London search intent, from corporate headshots to property photography.</p></div></div>
+      <div class="step reveal"><div class="no">06</div><div><h3>Launch &amp; Care</h3><p>We shipped at lifestyle.hestonphoto.co.uk and stayed on to keep the galleries, pages and performance sharp as the studio grows.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. THE RESULTS ============ -->
+<section class="results">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="color:var(--ember)">The Results</span>
+      <h2>What the studio walked away with</h2>
+      <p>A site that finally matches the work: one confident brand that carries six service lines, presents the studio's experience clearly, and makes starting a brief easy.</p>
+    </div>
+    <div class="results-grid reveal">
+      <div class="result"><div class="num">6</div><div class="cap">Service lines, one cohesive site</div></div>
+      <div class="result"><div class="num">15+</div><div class="cap">Years experience, front and centre</div></div>
+      <div class="result"><div class="num">500+</div><div class="cap">Briefs of proof on show</div></div>
+      <div class="result"><div class="num">7 to 10</div><div class="cap">Day delivery, clearly promised</div></div>
+    </div>
+    <ul class="cs-list reveal">
+      <li><span class="mark">✓</span>A premium, image-led presence that reflects the quality of the photography</li>
+      <li><span class="mark">✓</span>Every specialism has a focused page that speaks to its own audience</li>
+      <li><span class="mark">✓</span>A clear quote request path that turns browsers into briefs</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 8. TESTIMONIAL ============ -->
+<section class="cs-quote">
+  <div class="wrap">
+    <div class="inner reveal">
+      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <blockquote>"We can't thank Heston enough for the quality of the photos they took, their dedication and being amazing to work with. The album quality is exceptional, beautifully bound and printed."</blockquote>
+      <div class="who">
+        <div class="avatar">K</div>
+        <div style="text-align:left">
+          <strong>Krina &amp; Nishul</strong>
+          <span>Heston Photo clients</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. TECH STACK ============ -->
+<section class="tech">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Tech Stack</span>
+      <h2>What we built it with</h2>
+    </div>
+    <div class="tech-grid reveal">
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/html5" alt="" loading="lazy"><div><div class="t-cat">Markup</div><div class="t-name">HTML5</div></div></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/css" alt="" loading="lazy"><div><div class="t-cat">Styling</div><div class="t-name">CSS</div></div></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/javascript" alt="" loading="lazy"><div><div class="t-cat">Frontend</div><div class="t-name">JavaScript</div></div></div>
+      <div class="tech-item"><img src="https://cdn.simpleicons.org/googlesearchconsole" alt="" loading="lazy"><div><div class="t-cat">Discovery</div><div class="t-name">On-page SEO</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. WHY WHITE PHOENIX ============ -->
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Why White Phoenix</span>
+      <h2>What made the difference</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><h3>Design that serves the work</h3><p>We let the photography lead and built the interface to disappear around it.</p></div>
+      </div>
+      <div class="why-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+        <div><h3>Fast and responsive</h3><p>Optimised galleries and a clean build that looks right on every screen.</p></div>
+      </div>
+      <div class="why-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <div><h3>Built to be found</h3><p>Each service page written to rank for its own London search intent.</p></div>
+      </div>
+      <div class="why-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M21 3v6h-6"/></svg></div>
+        <div><h3>We stay after launch</h3><p>Ongoing care to keep the site sharp as the studio's work grows.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. FAQ ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq open">
+        <button aria-expanded="true">Can you build a site for a studio with lots of service lines?<span class="plus">+</span></button>
+        <div class="ans"><p>Yes. The whole point of the Heston build was to carry six different specialisms in one coherent brand, with a focused page for each audience. The same structure works whether you have three services or a dozen.</p></div>
+      </div>
+      <div class="faq">
+        <button aria-expanded="false">Will it show off my photography properly?<span class="plus">+</span></button>
+        <div class="ans"><p>That is the priority. We design image-first layouts with optimised galleries, so the work loads fast and looks its best on both desktop and mobile.</p></div>
+      </div>
+      <div class="faq">
+        <button aria-expanded="false">Can people enquire or request a quote directly?<span class="plus">+</span></button>
+        <div class="ans"><p>Yes. We wire in a quote request flow that funnels enquiries straight to you, and can connect a client portal for delivering finished galleries.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. CTA ============ -->
+<section class="cta-final">
+  <div class="wrap">
+    <div class="inner reveal">
+      <span class="eyebrow">Let's Talk</span>
+      <h2>Want a site that sells your work?</h2>
+      <p>Tell us what you're building. We'll come back within one business day with honest advice, and a clear path forward if we're the right fit.</p>
+      <div class="ctas">
+        <a href="index.html#contact" class="btn btn-flame">Book a Free Discovery Call</a>
+        <a href="portfolio.html" class="btn btn-night">See more work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="index.html#top" class="logo">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M16 2C16 2 8 9 8 17a8 8 0 0 0 16 0c0-3-1.4-5.4-3-7.4.4 2 .2 4-1.4 5.4.6-3.4-1-7.6-3.6-13Z" fill="url(#fg2)"/>
+            <path d="M16 30c-3 0-5.4-1.4-6.9-3.5C10.6 27.4 13 28 16 28s5.4-.6 6.9-1.5C21.4 28.6 19 30 16 30Z" fill="#fff"/>
+            <defs><linearGradient id="fg2" x1="8" y1="2" x2="24" y2="25"><stop stop-color="#FF5C1A"/><stop offset="1" stop-color="#FFB42E"/></linearGradient></defs>
+          </svg>
+          White Phoenix
+        </a>
+        <p>A web development agency and technology consulting company building digital products that help ambitious businesses rise.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index.html#services">Website Development</a></li>
+          <li><a href="index.html#services">App Development</a></li>
+          <li><a href="index.html#services">Custom Software &amp; ERP</a></li>
+          <li><a href="index.html#services">Tech Consulting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html#why-us">Why Us</a></li>
+          <li><a href="index.html#process">Our Process</a></li>
+          <li><a href="portfolio.html">Work</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@whitephoenix.in">hello@whitephoenix.in</a></li>
+          <li><a href="https://wa.me/910000000000">WhatsApp: +91 00000 00000</a></li>
+          <li>Bengaluru, Karnataka, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 White Phoenix Consulting. All rights reserved.</span>
+      <span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scroll state
+const header=document.getElementById('header');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>10),{passive:true});
+
+// Mobile menu
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{
+  const open=navLinks.classList.toggle('open');
+  menuBtn.classList.toggle('open',open);
+  menuBtn.setAttribute('aria-expanded',open);
+});
+
+// Scroll reveal
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}});
+},{threshold:.15});
+document.querySelectorAll('.reveal,.step').forEach(el=>io.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq').forEach(faq=>{
+  const btn=faq.querySelector('button'),ans=faq.querySelector('.ans');
+  if(faq.classList.contains('open'))ans.style.maxHeight=ans.scrollHeight+'px';
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.faq.open').forEach(o=>{
+      if(o!==faq){o.classList.remove('open');o.querySelector('.ans').style.maxHeight=null;o.querySelector('button').setAttribute('aria-expanded','false');}
+    });
+    const open=faq.classList.toggle('open');
+    ans.style.maxHeight=open?ans.scrollHeight+'px':null;
+    btn.setAttribute('aria-expanded',open);
+  });
+});
+
+// ===== Snapshots carousel + lightbox =====
+(function(){
+  const track=document.getElementById('carTrack');
+  if(!track) return;
+  const prev=document.getElementById('carPrev'), next=document.getElementById('carNext');
+  const dotsWrap=document.getElementById('carDots');
+  const shots=[...track.querySelectorAll('.shot')];
+  const imgOf=s=>s.querySelector('img');
+  const step=()=>{ const s=track.querySelector('.shot'); return s ? s.getBoundingClientRect().width+16 : 320; };
+  const current=()=>Math.round(track.scrollLeft/step());
+  const dots=shots.map((_,i)=>{
+    const b=document.createElement('button');
+    b.className='car-dot'; b.setAttribute('aria-label','Go to image '+(i+1));
+    b.addEventListener('click',()=>track.scrollTo({left:i*step(),behavior:'smooth'}));
+    dotsWrap.appendChild(b); return b;
+  });
+  function update(){
+    const i=current();
+    prev.disabled = track.scrollLeft < 8;
+    next.disabled = track.scrollLeft > track.scrollWidth - track.clientWidth - 8;
+    dots.forEach((d,k)=>d.classList.toggle('active',k===i));
+  }
+  prev.addEventListener('click',()=>track.scrollBy({left:-step(),behavior:'smooth'}));
+  next.addEventListener('click',()=>track.scrollBy({left:step(),behavior:'smooth'}));
+  track.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  update();
+
+  // lightbox
+  const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCaption');
+  let idx=0;
+  const show=()=>{ const im=imgOf(shots[idx]); lbImg.src=im.src; lbImg.alt=im.alt; lbCap.textContent=im.alt; };
+  const open=i=>{ idx=i; show(); lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; };
+  const close=()=>{ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); document.body.style.overflow=''; };
+  const go=d=>{ idx=(idx+d+shots.length)%shots.length; show(); };
+  shots.forEach((s,i)=>s.addEventListener('click',()=>open(i)));
+  document.getElementById('lbClose').addEventListener('click',close);
+  document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();go(-1);});
+  document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();go(1);});
+  lb.addEventListener('click',e=>{ if(e.target===lb) close(); });
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowLeft') go(-1);
+    else if(e.key==='ArrowRight') go(1);
+  });
+})();
+</script>
+</body>
+</html>
